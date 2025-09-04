@@ -1,0 +1,4 @@
+reportlab
+openpyxl
+num2words
+PyPDF2
