@@ -1,4 +1,10 @@
-reportlab
+﻿reportlab
 openpyxl
-num2words
+Pillow
 PyPDF2
+pymupdf
+pytesseract
+pdf2image
+qrcode
+python-dotenv
+tk

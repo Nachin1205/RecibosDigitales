@@ -1,0 +1,2964 @@
+./
+RecibosDigitales/
+    README.md
+    README.txt
+    app.py
+    config.py
+    contador_recibos.json
+    main.py
+    make_ico.py
+RecibosDigitales/.git/
+      COMMIT_EDITMSG
+      HEAD
+      config
+      description
+      index
+      packed-refs
+RecibosDigitales/.git/hooks/
+        applypatch-msg.sample
+        commit-msg.sample
+        fsmonitor-watchman.sample
+        post-update.sample
+        pre-applypatch.sample
+        pre-commit.sample
+        pre-merge-commit.sample
+        pre-push.sample
+        pre-rebase.sample
+        pre-receive.sample
+        prepare-commit-msg.sample
+        push-to-checkout.sample
+        sendemail-validate.sample
+        update.sample
+RecibosDigitales/.git/info/
+        exclude
+RecibosDigitales/.git/logs/
+        HEAD
+RecibosDigitales/.git/logs/refs/
+RecibosDigitales/.git/logs/refs/heads/
+            main
+RecibosDigitales/.git/logs/refs/remotes/
+RecibosDigitales/.git/logs/refs/remotes/origin/
+              HEAD
+              main
+RecibosDigitales/.git/objects/
+RecibosDigitales/.git/objects/00/
+          7793ac50ed98f12fd20b06a3c31f51d0c6583a
+RecibosDigitales/.git/objects/0e/
+          c99c389cf4e671ab481d74a82f741f8ed14c5c
+RecibosDigitales/.git/objects/24/
+          1ad25e4ae0cae4952770c29cd0bc65d33a920b
+RecibosDigitales/.git/objects/46/
+          b0e6f8fc0ba72386021c946984b65df0d96352
+RecibosDigitales/.git/objects/57/
+          e4cf8101e9c6143a4ebd115f4ed8ce6553a6f0
+RecibosDigitales/.git/objects/6e/
+          75e28049ac695774476599d4e3f5dfc225f890
+RecibosDigitales/.git/objects/71/
+          49b8ed0bfbfb7508e7df580e56e094ce950053
+RecibosDigitales/.git/objects/78/
+          4149cd0d26e82ca8bdd1ed44f7ed090919d944
+RecibosDigitales/.git/objects/7a/
+          4edd85f1ab84f0c6de43624298c99b7464a736
+RecibosDigitales/.git/objects/7d/
+          1919866b8a975fe9b0727d58ed5673a2453e50
+RecibosDigitales/.git/objects/80/
+          7244f6a799b049426c50f04d63366bb5680599
+RecibosDigitales/.git/objects/81/
+          cd9f7bda087a9a88cc3f6361f6629d72518907
+RecibosDigitales/.git/objects/a5/
+          d9814e0ea36ca3684d1b8efb0664aca226b80e
+RecibosDigitales/.git/objects/a7/
+          d20330af484459cab6d2834e7a88d2f35cc148
+RecibosDigitales/.git/objects/ae/
+          8942078f1605dbdc1e6e79b0df34619654d409
+RecibosDigitales/.git/objects/b2/
+          970f42acbb795e338da5806c9004eff0775d7c
+RecibosDigitales/.git/objects/d3/
+          1af0fdb05e64192a5b5be4079a1ad527b08594
+RecibosDigitales/.git/objects/e5/
+          48bb721fa0d87ba6e643c62eb1a7037e1e1142
+RecibosDigitales/.git/objects/ea/
+          3a234b1a11a6fa6251fa731383abc51fa2ed10
+RecibosDigitales/.git/objects/f9/
+          1242b22215906f867441c5741f6b65cad1faff
+RecibosDigitales/.git/objects/fa/
+          d414b315f3899ffc44c9985b693cb8f3506d4a
+RecibosDigitales/.git/objects/fb/
+          8aaacc89082549b1d5278f493c776e44d490a4
+RecibosDigitales/.git/objects/info/
+RecibosDigitales/.git/objects/pack/
+          pack-ab2ffc055c395bfe7422f76c6be51f3ac0df5bc8.idx
+          pack-ab2ffc055c395bfe7422f76c6be51f3ac0df5bc8.pack
+          pack-ab2ffc055c395bfe7422f76c6be51f3ac0df5bc8.rev
+RecibosDigitales/.git/refs/
+RecibosDigitales/.git/refs/heads/
+          main
+RecibosDigitales/.git/refs/remotes/
+RecibosDigitales/.git/refs/remotes/origin/
+            HEAD
+            main
+RecibosDigitales/.git/refs/tags/
+RecibosDigitales/.venv/
+      pyvenv.cfg
+RecibosDigitales/.venv/Lib/
+RecibosDigitales/.venv/Lib/site-packages/
+          distutils-precedence.pth
+RecibosDigitales/.venv/Lib/site-packages/MarkupSafe-3.0.2.dist-info/
+            INSTALLER
+            LICENSE.txt
+            METADATA
+            RECORD
+            WHEEL
+            top_level.txt
+RecibosDigitales/.venv/Lib/site-packages/PIL/
+            AvifImagePlugin.py
+            BdfFontFile.py
+            BlpImagePlugin.py
+            BmpImagePlugin.py
+            BufrStubImagePlugin.py
+            ContainerIO.py
+            CurImagePlugin.py
+            DcxImagePlugin.py
+            DdsImagePlugin.py
+            EpsImagePlugin.py
+            ExifTags.py
+            FitsImagePlugin.py
+            FliImagePlugin.py
+            FontFile.py
+            FpxImagePlugin.py
+            FtexImagePlugin.py
+            GbrImagePlugin.py
+            GdImageFile.py
+            GifImagePlugin.py
+            GimpGradientFile.py
+            GimpPaletteFile.py
+            GribStubImagePlugin.py
+            Hdf5StubImagePlugin.py
+            IcnsImagePlugin.py
+            IcoImagePlugin.py
+            ImImagePlugin.py
+            Image.py
+            ImageChops.py
+            ImageCms.py
+            ImageColor.py
+            ImageDraw.py
+            ImageDraw2.py
+            ImageEnhance.py
+            ImageFile.py
+            ImageFilter.py
+            ImageFont.py
+            ImageGrab.py
+            ImageMath.py
+            ImageMode.py
+            ImageMorph.py
+            ImageOps.py
+            ImagePalette.py
+            ImagePath.py
+            ImageQt.py
+            ImageSequence.py
+            ImageShow.py
+            ImageStat.py
+            ImageTk.py
+            ImageTransform.py
+            ImageWin.py
+            ImtImagePlugin.py
+            IptcImagePlugin.py
+            Jpeg2KImagePlugin.py
+            JpegImagePlugin.py
+            JpegPresets.py
+            McIdasImagePlugin.py
+            MicImagePlugin.py
+            MpegImagePlugin.py
+            MpoImagePlugin.py
+            MspImagePlugin.py
+            PSDraw.py
+            PaletteFile.py
+            PalmImagePlugin.py
+            PcdImagePlugin.py
+            PcfFontFile.py
+            PcxImagePlugin.py
+            PdfImagePlugin.py
+            PdfParser.py
+            PixarImagePlugin.py
+            PngImagePlugin.py
+            PpmImagePlugin.py
+            PsdImagePlugin.py
+            QoiImagePlugin.py
+            SgiImagePlugin.py
+            SpiderImagePlugin.py
+            SunImagePlugin.py
+            TarIO.py
+            TgaImagePlugin.py
+            TiffImagePlugin.py
+            TiffTags.py
+            WalImageFile.py
+            WebPImagePlugin.py
+            WmfImagePlugin.py
+            XVThumbImagePlugin.py
+            XbmImagePlugin.py
+            XpmImagePlugin.py
+            __init__.py
+            __main__.py
+            _avif.cp311-win_amd64.pyd
+            _avif.pyi
+            _binary.py
+            _deprecate.py
+            _imaging.cp311-win_amd64.pyd
+            _imaging.pyi
+            _imagingcms.cp311-win_amd64.pyd
+            _imagingcms.pyi
+            _imagingft.cp311-win_amd64.pyd
+            _imagingft.pyi
+            _imagingmath.cp311-win_amd64.pyd
+            _imagingmath.pyi
+            _imagingmorph.cp311-win_amd64.pyd
+            _imagingmorph.pyi
+            _imagingtk.cp311-win_amd64.pyd
+            _imagingtk.pyi
+            _tkinter_finder.py
+            _typing.py
+            _util.py
+            _version.py
+            _webp.cp311-win_amd64.pyd
+            _webp.pyi
+            features.py
+            py.typed
+            report.py
+RecibosDigitales/.venv/Lib/site-packages/PIL/__pycache__/
+              AvifImagePlugin.cpython-311.pyc
+              BdfFontFile.cpython-311.pyc
+              BlpImagePlugin.cpython-311.pyc
+              BmpImagePlugin.cpython-311.pyc
+              BufrStubImagePlugin.cpython-311.pyc
+              ContainerIO.cpython-311.pyc
+              CurImagePlugin.cpython-311.pyc
+              DcxImagePlugin.cpython-311.pyc
+              DdsImagePlugin.cpython-311.pyc
+              EpsImagePlugin.cpython-311.pyc
+              ExifTags.cpython-311.pyc
+              FitsImagePlugin.cpython-311.pyc
+              FliImagePlugin.cpython-311.pyc
+              FontFile.cpython-311.pyc
+              FpxImagePlugin.cpython-311.pyc
+              FtexImagePlugin.cpython-311.pyc
+              GbrImagePlugin.cpython-311.pyc
+              GdImageFile.cpython-311.pyc
+              GifImagePlugin.cpython-311.pyc
+              GimpGradientFile.cpython-311.pyc
+              GimpPaletteFile.cpython-311.pyc
+              GribStubImagePlugin.cpython-311.pyc
+              Hdf5StubImagePlugin.cpython-311.pyc
+              IcnsImagePlugin.cpython-311.pyc
+              IcoImagePlugin.cpython-311.pyc
+              ImImagePlugin.cpython-311.pyc
+              Image.cpython-311.pyc
+              ImageChops.cpython-311.pyc
+              ImageCms.cpython-311.pyc
+              ImageColor.cpython-311.pyc
+              ImageDraw.cpython-311.pyc
+              ImageDraw2.cpython-311.pyc
+              ImageEnhance.cpython-311.pyc
+              ImageFile.cpython-311.pyc
+              ImageFilter.cpython-311.pyc
+              ImageFont.cpython-311.pyc
+              ImageGrab.cpython-311.pyc
+              ImageMath.cpython-311.pyc
+              ImageMode.cpython-311.pyc
+              ImageMorph.cpython-311.pyc
+              ImageOps.cpython-311.pyc
+              ImagePalette.cpython-311.pyc
+              ImagePath.cpython-311.pyc
+              ImageQt.cpython-311.pyc
+              ImageSequence.cpython-311.pyc
+              ImageShow.cpython-311.pyc
+              ImageStat.cpython-311.pyc
+              ImageTk.cpython-311.pyc
+              ImageTransform.cpython-311.pyc
+              ImageWin.cpython-311.pyc
+              ImtImagePlugin.cpython-311.pyc
+              IptcImagePlugin.cpython-311.pyc
+              Jpeg2KImagePlugin.cpython-311.pyc
+              JpegImagePlugin.cpython-311.pyc
+              JpegPresets.cpython-311.pyc
+              McIdasImagePlugin.cpython-311.pyc
+              MicImagePlugin.cpython-311.pyc
+              MpegImagePlugin.cpython-311.pyc
+              MpoImagePlugin.cpython-311.pyc
+              MspImagePlugin.cpython-311.pyc
+              PSDraw.cpython-311.pyc
+              PaletteFile.cpython-311.pyc
+              PalmImagePlugin.cpython-311.pyc
+              PcdImagePlugin.cpython-311.pyc
+              PcfFontFile.cpython-311.pyc
+              PcxImagePlugin.cpython-311.pyc
+              PdfImagePlugin.cpython-311.pyc
+              PdfParser.cpython-311.pyc
+              PixarImagePlugin.cpython-311.pyc
+              PngImagePlugin.cpython-311.pyc
+              PpmImagePlugin.cpython-311.pyc
+              PsdImagePlugin.cpython-311.pyc
+              QoiImagePlugin.cpython-311.pyc
+              SgiImagePlugin.cpython-311.pyc
+              SpiderImagePlugin.cpython-311.pyc
+              SunImagePlugin.cpython-311.pyc
+              TarIO.cpython-311.pyc
+              TgaImagePlugin.cpython-311.pyc
+              TiffImagePlugin.cpython-311.pyc
+              TiffTags.cpython-311.pyc
+              WalImageFile.cpython-311.pyc
+              WebPImagePlugin.cpython-311.pyc
+              WmfImagePlugin.cpython-311.pyc
+              XVThumbImagePlugin.cpython-311.pyc
+              XbmImagePlugin.cpython-311.pyc
+              XpmImagePlugin.cpython-311.pyc
+              __init__.cpython-311.pyc
+              __main__.cpython-311.pyc
+              _binary.cpython-311.pyc
+              _deprecate.cpython-311.pyc
+              _tkinter_finder.cpython-311.pyc
+              _typing.cpython-311.pyc
+              _util.cpython-311.pyc
+              _version.cpython-311.pyc
+              features.cpython-311.pyc
+              report.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/PyPDF2/
+            __init__.py
+            _cmap.py
+            _encryption.py
+            _merger.py
+            _page.py
+            _protocols.py
+            _reader.py
+            _security.py
+            _utils.py
+            _version.py
+            _writer.py
+            constants.py
+            errors.py
+            filters.py
+            pagerange.py
+            papersizes.py
+            py.typed
+            types.py
+            xmp.py
+RecibosDigitales/.venv/Lib/site-packages/PyPDF2/__pycache__/
+              __init__.cpython-311.pyc
+              _cmap.cpython-311.pyc
+              _encryption.cpython-311.pyc
+              _merger.cpython-311.pyc
+              _page.cpython-311.pyc
+              _protocols.cpython-311.pyc
+              _reader.cpython-311.pyc
+              _security.cpython-311.pyc
+              _utils.cpython-311.pyc
+              _version.cpython-311.pyc
+              _writer.cpython-311.pyc
+              constants.cpython-311.pyc
+              errors.cpython-311.pyc
+              filters.cpython-311.pyc
+              pagerange.cpython-311.pyc
+              papersizes.cpython-311.pyc
+              types.cpython-311.pyc
+              xmp.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/PyPDF2/_codecs/
+              __init__.py
+              adobe_glyphs.py
+              pdfdoc.py
+              std.py
+              symbol.py
+              zapfding.py
+RecibosDigitales/.venv/Lib/site-packages/PyPDF2/_codecs/__pycache__/
+                __init__.cpython-311.pyc
+                adobe_glyphs.cpython-311.pyc
+                pdfdoc.cpython-311.pyc
+                std.cpython-311.pyc
+                symbol.cpython-311.pyc
+                zapfding.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/PyPDF2/generic/
+              __init__.py
+              _annotations.py
+              _base.py
+              _data_structures.py
+              _fit.py
+              _outline.py
+              _rectangle.py
+              _utils.py
+RecibosDigitales/.venv/Lib/site-packages/PyPDF2/generic/__pycache__/
+                __init__.cpython-311.pyc
+                _annotations.cpython-311.pyc
+                _base.cpython-311.pyc
+                _data_structures.cpython-311.pyc
+                _fit.cpython-311.pyc
+                _outline.cpython-311.pyc
+                _rectangle.cpython-311.pyc
+                _utils.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/_distutils_hack/
+            __init__.py
+            override.py
+RecibosDigitales/.venv/Lib/site-packages/_distutils_hack/__pycache__/
+              __init__.cpython-311.pyc
+              override.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/blinker/
+            __init__.py
+            _utilities.py
+            base.py
+            py.typed
+RecibosDigitales/.venv/Lib/site-packages/blinker/__pycache__/
+              __init__.cpython-311.pyc
+              _utilities.cpython-311.pyc
+              base.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/blinker-1.9.0.dist-info/
+            INSTALLER
+            LICENSE.txt
+            METADATA
+            RECORD
+            WHEEL
+RecibosDigitales/.venv/Lib/site-packages/charset_normalizer/
+            __init__.py
+            __main__.py
+            api.py
+            cd.py
+            constant.py
+            legacy.py
+            md.cp311-win_amd64.pyd
+            md.py
+            md__mypyc.cp311-win_amd64.pyd
+            models.py
+            py.typed
+            utils.py
+            version.py
+RecibosDigitales/.venv/Lib/site-packages/charset_normalizer/__pycache__/
+              __init__.cpython-311.pyc
+              __main__.cpython-311.pyc
+              api.cpython-311.pyc
+              cd.cpython-311.pyc
+              constant.cpython-311.pyc
+              legacy.cpython-311.pyc
+              md.cpython-311.pyc
+              models.cpython-311.pyc
+              utils.cpython-311.pyc
+              version.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/charset_normalizer/cli/
+              __init__.py
+              __main__.py
+RecibosDigitales/.venv/Lib/site-packages/charset_normalizer/cli/__pycache__/
+                __init__.cpython-311.pyc
+                __main__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/charset_normalizer-3.4.3.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            WHEEL
+            entry_points.txt
+            top_level.txt
+RecibosDigitales/.venv/Lib/site-packages/charset_normalizer-3.4.3.dist-info/licenses/
+              LICENSE
+RecibosDigitales/.venv/Lib/site-packages/click/
+            __init__.py
+            _compat.py
+            _termui_impl.py
+            _textwrap.py
+            _winconsole.py
+            core.py
+            decorators.py
+            exceptions.py
+            formatting.py
+            globals.py
+            parser.py
+            py.typed
+            shell_completion.py
+            termui.py
+            testing.py
+            types.py
+            utils.py
+RecibosDigitales/.venv/Lib/site-packages/click/__pycache__/
+              __init__.cpython-311.pyc
+              _compat.cpython-311.pyc
+              _termui_impl.cpython-311.pyc
+              _textwrap.cpython-311.pyc
+              _winconsole.cpython-311.pyc
+              core.cpython-311.pyc
+              decorators.cpython-311.pyc
+              exceptions.cpython-311.pyc
+              formatting.cpython-311.pyc
+              globals.cpython-311.pyc
+              parser.cpython-311.pyc
+              shell_completion.cpython-311.pyc
+              termui.cpython-311.pyc
+              testing.cpython-311.pyc
+              types.cpython-311.pyc
+              utils.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/click-8.2.1.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            WHEEL
+RecibosDigitales/.venv/Lib/site-packages/click-8.2.1.dist-info/licenses/
+              LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/colorama/
+            __init__.py
+            ansi.py
+            ansitowin32.py
+            initialise.py
+            win32.py
+            winterm.py
+RecibosDigitales/.venv/Lib/site-packages/colorama/__pycache__/
+              __init__.cpython-311.pyc
+              ansi.cpython-311.pyc
+              ansitowin32.cpython-311.pyc
+              initialise.cpython-311.pyc
+              win32.cpython-311.pyc
+              winterm.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/colorama/tests/
+              __init__.py
+              ansi_test.py
+              ansitowin32_test.py
+              initialise_test.py
+              isatty_test.py
+              utils.py
+              winterm_test.py
+RecibosDigitales/.venv/Lib/site-packages/colorama/tests/__pycache__/
+                __init__.cpython-311.pyc
+                ansi_test.cpython-311.pyc
+                ansitowin32_test.cpython-311.pyc
+                initialise_test.cpython-311.pyc
+                isatty_test.cpython-311.pyc
+                utils.cpython-311.pyc
+                winterm_test.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/colorama-0.4.6.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            WHEEL
+RecibosDigitales/.venv/Lib/site-packages/colorama-0.4.6.dist-info/licenses/
+              LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/flask/
+            __init__.py
+            __main__.py
+            app.py
+            blueprints.py
+            cli.py
+            config.py
+            ctx.py
+            debughelpers.py
+            globals.py
+            helpers.py
+            logging.py
+            py.typed
+            sessions.py
+            signals.py
+            templating.py
+            testing.py
+            typing.py
+            views.py
+            wrappers.py
+RecibosDigitales/.venv/Lib/site-packages/flask/__pycache__/
+              __init__.cpython-311.pyc
+              __main__.cpython-311.pyc
+              app.cpython-311.pyc
+              blueprints.cpython-311.pyc
+              cli.cpython-311.pyc
+              config.cpython-311.pyc
+              ctx.cpython-311.pyc
+              debughelpers.cpython-311.pyc
+              globals.cpython-311.pyc
+              helpers.cpython-311.pyc
+              logging.cpython-311.pyc
+              sessions.cpython-311.pyc
+              signals.cpython-311.pyc
+              templating.cpython-311.pyc
+              testing.cpython-311.pyc
+              typing.cpython-311.pyc
+              views.cpython-311.pyc
+              wrappers.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/flask/json/
+              __init__.py
+              provider.py
+              tag.py
+RecibosDigitales/.venv/Lib/site-packages/flask/json/__pycache__/
+                __init__.cpython-311.pyc
+                provider.cpython-311.pyc
+                tag.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/flask/sansio/
+              README.md
+              app.py
+              blueprints.py
+              scaffold.py
+RecibosDigitales/.venv/Lib/site-packages/flask/sansio/__pycache__/
+                app.cpython-311.pyc
+                blueprints.cpython-311.pyc
+                scaffold.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/flask-3.1.2.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            REQUESTED
+            WHEEL
+            entry_points.txt
+RecibosDigitales/.venv/Lib/site-packages/flask-3.1.2.dist-info/licenses/
+              LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/itsdangerous/
+            __init__.py
+            _json.py
+            encoding.py
+            exc.py
+            py.typed
+            serializer.py
+            signer.py
+            timed.py
+            url_safe.py
+RecibosDigitales/.venv/Lib/site-packages/itsdangerous/__pycache__/
+              __init__.cpython-311.pyc
+              _json.cpython-311.pyc
+              encoding.cpython-311.pyc
+              exc.cpython-311.pyc
+              serializer.cpython-311.pyc
+              signer.cpython-311.pyc
+              timed.cpython-311.pyc
+              url_safe.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/itsdangerous-2.2.0.dist-info/
+            INSTALLER
+            LICENSE.txt
+            METADATA
+            RECORD
+            WHEEL
+RecibosDigitales/.venv/Lib/site-packages/jinja2/
+            __init__.py
+            _identifier.py
+            async_utils.py
+            bccache.py
+            compiler.py
+            constants.py
+            debug.py
+            defaults.py
+            environment.py
+            exceptions.py
+            ext.py
+            filters.py
+            idtracking.py
+            lexer.py
+            loaders.py
+            meta.py
+            nativetypes.py
+            nodes.py
+            optimizer.py
+            parser.py
+            py.typed
+            runtime.py
+            sandbox.py
+            tests.py
+            utils.py
+            visitor.py
+RecibosDigitales/.venv/Lib/site-packages/jinja2/__pycache__/
+              __init__.cpython-311.pyc
+              _identifier.cpython-311.pyc
+              async_utils.cpython-311.pyc
+              bccache.cpython-311.pyc
+              compiler.cpython-311.pyc
+              constants.cpython-311.pyc
+              debug.cpython-311.pyc
+              defaults.cpython-311.pyc
+              environment.cpython-311.pyc
+              exceptions.cpython-311.pyc
+              ext.cpython-311.pyc
+              filters.cpython-311.pyc
+              idtracking.cpython-311.pyc
+              lexer.cpython-311.pyc
+              loaders.cpython-311.pyc
+              meta.cpython-311.pyc
+              nativetypes.cpython-311.pyc
+              nodes.cpython-311.pyc
+              optimizer.cpython-311.pyc
+              parser.cpython-311.pyc
+              runtime.cpython-311.pyc
+              sandbox.cpython-311.pyc
+              tests.cpython-311.pyc
+              utils.cpython-311.pyc
+              visitor.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/jinja2-3.1.6.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            WHEEL
+            entry_points.txt
+RecibosDigitales/.venv/Lib/site-packages/jinja2-3.1.6.dist-info/licenses/
+              LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/markupsafe/
+            __init__.py
+            _native.py
+            _speedups.c
+            _speedups.cp311-win_amd64.pyd
+            _speedups.pyi
+            py.typed
+RecibosDigitales/.venv/Lib/site-packages/markupsafe/__pycache__/
+              __init__.cpython-311.pyc
+              _native.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pillow-11.3.0.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            REQUESTED
+            WHEEL
+            top_level.txt
+            zip-safe
+RecibosDigitales/.venv/Lib/site-packages/pillow-11.3.0.dist-info/licenses/
+              LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip/
+            __init__.py
+            __main__.py
+            __pip-runner__.py
+            py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/__pycache__/
+              __init__.cpython-311.pyc
+              __main__.cpython-311.pyc
+              __pip-runner__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/
+              __init__.py
+              build_env.py
+              cache.py
+              configuration.py
+              exceptions.py
+              main.py
+              pyproject.py
+              self_outdated_check.py
+              wheel_builder.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/__pycache__/
+                __init__.cpython-311.pyc
+                build_env.cpython-311.pyc
+                cache.cpython-311.pyc
+                configuration.cpython-311.pyc
+                exceptions.cpython-311.pyc
+                main.cpython-311.pyc
+                pyproject.cpython-311.pyc
+                self_outdated_check.cpython-311.pyc
+                wheel_builder.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/cli/
+                __init__.py
+                autocompletion.py
+                base_command.py
+                cmdoptions.py
+                command_context.py
+                index_command.py
+                main.py
+                main_parser.py
+                parser.py
+                progress_bars.py
+                req_command.py
+                spinners.py
+                status_codes.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/cli/__pycache__/
+                  __init__.cpython-311.pyc
+                  autocompletion.cpython-311.pyc
+                  base_command.cpython-311.pyc
+                  cmdoptions.cpython-311.pyc
+                  command_context.cpython-311.pyc
+                  index_command.cpython-311.pyc
+                  main.cpython-311.pyc
+                  main_parser.cpython-311.pyc
+                  parser.cpython-311.pyc
+                  progress_bars.cpython-311.pyc
+                  req_command.cpython-311.pyc
+                  spinners.cpython-311.pyc
+                  status_codes.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/commands/
+                __init__.py
+                cache.py
+                check.py
+                completion.py
+                configuration.py
+                debug.py
+                download.py
+                freeze.py
+                hash.py
+                help.py
+                index.py
+                inspect.py
+                install.py
+                list.py
+                lock.py
+                search.py
+                show.py
+                uninstall.py
+                wheel.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/commands/__pycache__/
+                  __init__.cpython-311.pyc
+                  cache.cpython-311.pyc
+                  check.cpython-311.pyc
+                  completion.cpython-311.pyc
+                  configuration.cpython-311.pyc
+                  debug.cpython-311.pyc
+                  download.cpython-311.pyc
+                  freeze.cpython-311.pyc
+                  hash.cpython-311.pyc
+                  help.cpython-311.pyc
+                  index.cpython-311.pyc
+                  inspect.cpython-311.pyc
+                  install.cpython-311.pyc
+                  list.cpython-311.pyc
+                  lock.cpython-311.pyc
+                  search.cpython-311.pyc
+                  show.cpython-311.pyc
+                  uninstall.cpython-311.pyc
+                  wheel.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/distributions/
+                __init__.py
+                base.py
+                installed.py
+                sdist.py
+                wheel.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/distributions/__pycache__/
+                  __init__.cpython-311.pyc
+                  base.cpython-311.pyc
+                  installed.cpython-311.pyc
+                  sdist.cpython-311.pyc
+                  wheel.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/index/
+                __init__.py
+                collector.py
+                package_finder.py
+                sources.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/index/__pycache__/
+                  __init__.cpython-311.pyc
+                  collector.cpython-311.pyc
+                  package_finder.cpython-311.pyc
+                  sources.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/locations/
+                __init__.py
+                _distutils.py
+                _sysconfig.py
+                base.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/locations/__pycache__/
+                  __init__.cpython-311.pyc
+                  _distutils.cpython-311.pyc
+                  _sysconfig.cpython-311.pyc
+                  base.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/metadata/
+                __init__.py
+                _json.py
+                base.py
+                pkg_resources.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/metadata/__pycache__/
+                  __init__.cpython-311.pyc
+                  _json.cpython-311.pyc
+                  base.cpython-311.pyc
+                  pkg_resources.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/metadata/importlib/
+                  __init__.py
+                  _compat.py
+                  _dists.py
+                  _envs.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/metadata/importlib/__pycache__/
+                    __init__.cpython-311.pyc
+                    _compat.cpython-311.pyc
+                    _dists.cpython-311.pyc
+                    _envs.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/models/
+                __init__.py
+                candidate.py
+                direct_url.py
+                format_control.py
+                index.py
+                installation_report.py
+                link.py
+                pylock.py
+                scheme.py
+                search_scope.py
+                selection_prefs.py
+                target_python.py
+                wheel.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/models/__pycache__/
+                  __init__.cpython-311.pyc
+                  candidate.cpython-311.pyc
+                  direct_url.cpython-311.pyc
+                  format_control.cpython-311.pyc
+                  index.cpython-311.pyc
+                  installation_report.cpython-311.pyc
+                  link.cpython-311.pyc
+                  pylock.cpython-311.pyc
+                  scheme.cpython-311.pyc
+                  search_scope.cpython-311.pyc
+                  selection_prefs.cpython-311.pyc
+                  target_python.cpython-311.pyc
+                  wheel.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/network/
+                __init__.py
+                auth.py
+                cache.py
+                download.py
+                lazy_wheel.py
+                session.py
+                utils.py
+                xmlrpc.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/network/__pycache__/
+                  __init__.cpython-311.pyc
+                  auth.cpython-311.pyc
+                  cache.cpython-311.pyc
+                  download.cpython-311.pyc
+                  lazy_wheel.cpython-311.pyc
+                  session.cpython-311.pyc
+                  utils.cpython-311.pyc
+                  xmlrpc.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/operations/
+                __init__.py
+                check.py
+                freeze.py
+                prepare.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/operations/__pycache__/
+                  __init__.cpython-311.pyc
+                  check.cpython-311.pyc
+                  freeze.cpython-311.pyc
+                  prepare.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/operations/build/
+                  __init__.py
+                  build_tracker.py
+                  metadata.py
+                  metadata_editable.py
+                  metadata_legacy.py
+                  wheel.py
+                  wheel_editable.py
+                  wheel_legacy.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/operations/build/__pycache__/
+                    __init__.cpython-311.pyc
+                    build_tracker.cpython-311.pyc
+                    metadata.cpython-311.pyc
+                    metadata_editable.cpython-311.pyc
+                    metadata_legacy.cpython-311.pyc
+                    wheel.cpython-311.pyc
+                    wheel_editable.cpython-311.pyc
+                    wheel_legacy.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/operations/install/
+                  __init__.py
+                  editable_legacy.py
+                  wheel.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/operations/install/__pycache__/
+                    __init__.cpython-311.pyc
+                    editable_legacy.cpython-311.pyc
+                    wheel.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/req/
+                __init__.py
+                constructors.py
+                req_dependency_group.py
+                req_file.py
+                req_install.py
+                req_set.py
+                req_uninstall.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/req/__pycache__/
+                  __init__.cpython-311.pyc
+                  constructors.cpython-311.pyc
+                  req_dependency_group.cpython-311.pyc
+                  req_file.cpython-311.pyc
+                  req_install.cpython-311.pyc
+                  req_set.cpython-311.pyc
+                  req_uninstall.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/resolution/
+                __init__.py
+                base.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/resolution/__pycache__/
+                  __init__.cpython-311.pyc
+                  base.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/resolution/legacy/
+                  __init__.py
+                  resolver.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/resolution/legacy/__pycache__/
+                    __init__.cpython-311.pyc
+                    resolver.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/resolution/resolvelib/
+                  __init__.py
+                  base.py
+                  candidates.py
+                  factory.py
+                  found_candidates.py
+                  provider.py
+                  reporter.py
+                  requirements.py
+                  resolver.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/resolution/resolvelib/__pycache__/
+                    __init__.cpython-311.pyc
+                    base.cpython-311.pyc
+                    candidates.cpython-311.pyc
+                    factory.cpython-311.pyc
+                    found_candidates.cpython-311.pyc
+                    provider.cpython-311.pyc
+                    reporter.cpython-311.pyc
+                    requirements.cpython-311.pyc
+                    resolver.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/utils/
+                __init__.py
+                _jaraco_text.py
+                _log.py
+                appdirs.py
+                compat.py
+                compatibility_tags.py
+                datetime.py
+                deprecation.py
+                direct_url_helpers.py
+                egg_link.py
+                entrypoints.py
+                filesystem.py
+                filetypes.py
+                glibc.py
+                hashes.py
+                logging.py
+                misc.py
+                packaging.py
+                retry.py
+                setuptools_build.py
+                subprocess.py
+                temp_dir.py
+                unpacking.py
+                urls.py
+                virtualenv.py
+                wheel.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/utils/__pycache__/
+                  __init__.cpython-311.pyc
+                  _jaraco_text.cpython-311.pyc
+                  _log.cpython-311.pyc
+                  appdirs.cpython-311.pyc
+                  compat.cpython-311.pyc
+                  compatibility_tags.cpython-311.pyc
+                  datetime.cpython-311.pyc
+                  deprecation.cpython-311.pyc
+                  direct_url_helpers.cpython-311.pyc
+                  egg_link.cpython-311.pyc
+                  entrypoints.cpython-311.pyc
+                  filesystem.cpython-311.pyc
+                  filetypes.cpython-311.pyc
+                  glibc.cpython-311.pyc
+                  hashes.cpython-311.pyc
+                  logging.cpython-311.pyc
+                  misc.cpython-311.pyc
+                  packaging.cpython-311.pyc
+                  retry.cpython-311.pyc
+                  setuptools_build.cpython-311.pyc
+                  subprocess.cpython-311.pyc
+                  temp_dir.cpython-311.pyc
+                  unpacking.cpython-311.pyc
+                  urls.cpython-311.pyc
+                  virtualenv.cpython-311.pyc
+                  wheel.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/vcs/
+                __init__.py
+                bazaar.py
+                git.py
+                mercurial.py
+                subversion.py
+                versioncontrol.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_internal/vcs/__pycache__/
+                  __init__.cpython-311.pyc
+                  bazaar.cpython-311.pyc
+                  git.cpython-311.pyc
+                  mercurial.cpython-311.pyc
+                  subversion.cpython-311.pyc
+                  versioncontrol.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/
+              __init__.py
+              vendor.txt
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/__pycache__/
+                __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/cachecontrol/
+                __init__.py
+                _cmd.py
+                adapter.py
+                cache.py
+                controller.py
+                filewrapper.py
+                heuristics.py
+                py.typed
+                serialize.py
+                wrapper.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/cachecontrol/__pycache__/
+                  __init__.cpython-311.pyc
+                  _cmd.cpython-311.pyc
+                  adapter.cpython-311.pyc
+                  cache.cpython-311.pyc
+                  controller.cpython-311.pyc
+                  filewrapper.cpython-311.pyc
+                  heuristics.cpython-311.pyc
+                  serialize.cpython-311.pyc
+                  wrapper.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/cachecontrol/caches/
+                  __init__.py
+                  file_cache.py
+                  redis_cache.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/cachecontrol/caches/__pycache__/
+                    __init__.cpython-311.pyc
+                    file_cache.cpython-311.pyc
+                    redis_cache.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/certifi/
+                __init__.py
+                __main__.py
+                cacert.pem
+                core.py
+                py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/certifi/__pycache__/
+                  __init__.cpython-311.pyc
+                  __main__.cpython-311.pyc
+                  core.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/dependency_groups/
+                __init__.py
+                __main__.py
+                _implementation.py
+                _lint_dependency_groups.py
+                _pip_wrapper.py
+                _toml_compat.py
+                py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/dependency_groups/__pycache__/
+                  __init__.cpython-311.pyc
+                  __main__.cpython-311.pyc
+                  _implementation.cpython-311.pyc
+                  _lint_dependency_groups.cpython-311.pyc
+                  _pip_wrapper.cpython-311.pyc
+                  _toml_compat.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/distlib/
+                __init__.py
+                compat.py
+                resources.py
+                scripts.py
+                t32.exe
+                t64-arm.exe
+                t64.exe
+                util.py
+                w32.exe
+                w64-arm.exe
+                w64.exe
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/distlib/__pycache__/
+                  __init__.cpython-311.pyc
+                  compat.cpython-311.pyc
+                  resources.cpython-311.pyc
+                  scripts.cpython-311.pyc
+                  util.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/distro/
+                __init__.py
+                __main__.py
+                distro.py
+                py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/distro/__pycache__/
+                  __init__.cpython-311.pyc
+                  __main__.cpython-311.pyc
+                  distro.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/idna/
+                __init__.py
+                codec.py
+                compat.py
+                core.py
+                idnadata.py
+                intranges.py
+                package_data.py
+                py.typed
+                uts46data.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/idna/__pycache__/
+                  __init__.cpython-311.pyc
+                  codec.cpython-311.pyc
+                  compat.cpython-311.pyc
+                  core.cpython-311.pyc
+                  idnadata.cpython-311.pyc
+                  intranges.cpython-311.pyc
+                  package_data.cpython-311.pyc
+                  uts46data.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/msgpack/
+                __init__.py
+                exceptions.py
+                ext.py
+                fallback.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/msgpack/__pycache__/
+                  __init__.cpython-311.pyc
+                  exceptions.cpython-311.pyc
+                  ext.cpython-311.pyc
+                  fallback.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/packaging/
+                __init__.py
+                _elffile.py
+                _manylinux.py
+                _musllinux.py
+                _parser.py
+                _structures.py
+                _tokenizer.py
+                markers.py
+                metadata.py
+                py.typed
+                requirements.py
+                specifiers.py
+                tags.py
+                utils.py
+                version.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/packaging/__pycache__/
+                  __init__.cpython-311.pyc
+                  _elffile.cpython-311.pyc
+                  _manylinux.cpython-311.pyc
+                  _musllinux.cpython-311.pyc
+                  _parser.cpython-311.pyc
+                  _structures.cpython-311.pyc
+                  _tokenizer.cpython-311.pyc
+                  markers.cpython-311.pyc
+                  metadata.cpython-311.pyc
+                  requirements.cpython-311.pyc
+                  specifiers.cpython-311.pyc
+                  tags.cpython-311.pyc
+                  utils.cpython-311.pyc
+                  version.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/packaging/licenses/
+                  __init__.py
+                  _spdx.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/packaging/licenses/__pycache__/
+                    __init__.cpython-311.pyc
+                    _spdx.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pkg_resources/
+                __init__.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pkg_resources/__pycache__/
+                  __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/platformdirs/
+                __init__.py
+                __main__.py
+                android.py
+                api.py
+                macos.py
+                py.typed
+                unix.py
+                version.py
+                windows.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/platformdirs/__pycache__/
+                  __init__.cpython-311.pyc
+                  __main__.cpython-311.pyc
+                  android.cpython-311.pyc
+                  api.cpython-311.pyc
+                  macos.cpython-311.pyc
+                  unix.cpython-311.pyc
+                  version.cpython-311.pyc
+                  windows.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/
+                __init__.py
+                __main__.py
+                console.py
+                filter.py
+                formatter.py
+                lexer.py
+                modeline.py
+                plugin.py
+                regexopt.py
+                scanner.py
+                sphinxext.py
+                style.py
+                token.py
+                unistring.py
+                util.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/__pycache__/
+                  __init__.cpython-311.pyc
+                  __main__.cpython-311.pyc
+                  console.cpython-311.pyc
+                  filter.cpython-311.pyc
+                  formatter.cpython-311.pyc
+                  lexer.cpython-311.pyc
+                  modeline.cpython-311.pyc
+                  plugin.cpython-311.pyc
+                  regexopt.cpython-311.pyc
+                  scanner.cpython-311.pyc
+                  sphinxext.cpython-311.pyc
+                  style.cpython-311.pyc
+                  token.cpython-311.pyc
+                  unistring.cpython-311.pyc
+                  util.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/filters/
+                  __init__.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/filters/__pycache__/
+                    __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/formatters/
+                  __init__.py
+                  _mapping.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/formatters/__pycache__/
+                    __init__.cpython-311.pyc
+                    _mapping.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/lexers/
+                  __init__.py
+                  _mapping.py
+                  python.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/lexers/__pycache__/
+                    __init__.cpython-311.pyc
+                    _mapping.cpython-311.pyc
+                    python.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/styles/
+                  __init__.py
+                  _mapping.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pygments/styles/__pycache__/
+                    __init__.cpython-311.pyc
+                    _mapping.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/
+                __init__.py
+                _impl.py
+                py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/__pycache__/
+                  __init__.cpython-311.pyc
+                  _impl.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/
+                  __init__.py
+                  _in_process.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__/
+                    __init__.cpython-311.pyc
+                    _in_process.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/requests/
+                __init__.py
+                __version__.py
+                _internal_utils.py
+                adapters.py
+                api.py
+                auth.py
+                certs.py
+                compat.py
+                cookies.py
+                exceptions.py
+                help.py
+                hooks.py
+                models.py
+                packages.py
+                sessions.py
+                status_codes.py
+                structures.py
+                utils.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/requests/__pycache__/
+                  __init__.cpython-311.pyc
+                  __version__.cpython-311.pyc
+                  _internal_utils.cpython-311.pyc
+                  adapters.cpython-311.pyc
+                  api.cpython-311.pyc
+                  auth.cpython-311.pyc
+                  certs.cpython-311.pyc
+                  compat.cpython-311.pyc
+                  cookies.cpython-311.pyc
+                  exceptions.cpython-311.pyc
+                  help.cpython-311.pyc
+                  hooks.cpython-311.pyc
+                  models.cpython-311.pyc
+                  packages.cpython-311.pyc
+                  sessions.cpython-311.pyc
+                  status_codes.cpython-311.pyc
+                  structures.cpython-311.pyc
+                  utils.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/resolvelib/
+                __init__.py
+                providers.py
+                py.typed
+                reporters.py
+                structs.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/resolvelib/__pycache__/
+                  __init__.cpython-311.pyc
+                  providers.cpython-311.pyc
+                  reporters.cpython-311.pyc
+                  structs.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/resolvelib/resolvers/
+                  __init__.py
+                  abstract.py
+                  criterion.py
+                  exceptions.py
+                  resolution.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/resolvelib/resolvers/__pycache__/
+                    __init__.cpython-311.pyc
+                    abstract.cpython-311.pyc
+                    criterion.cpython-311.pyc
+                    exceptions.cpython-311.pyc
+                    resolution.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/rich/
+                __init__.py
+                __main__.py
+                _cell_widths.py
+                _emoji_codes.py
+                _emoji_replace.py
+                _export_format.py
+                _extension.py
+                _fileno.py
+                _inspect.py
+                _log_render.py
+                _loop.py
+                _null_file.py
+                _palettes.py
+                _pick.py
+                _ratio.py
+                _spinners.py
+                _stack.py
+                _timer.py
+                _win32_console.py
+                _windows.py
+                _windows_renderer.py
+                _wrap.py
+                abc.py
+                align.py
+                ansi.py
+                bar.py
+                box.py
+                cells.py
+                color.py
+                color_triplet.py
+                columns.py
+                console.py
+                constrain.py
+                containers.py
+                control.py
+                default_styles.py
+                diagnose.py
+                emoji.py
+                errors.py
+                file_proxy.py
+                filesize.py
+                highlighter.py
+                json.py
+                jupyter.py
+                layout.py
+                live.py
+                live_render.py
+                logging.py
+                markup.py
+                measure.py
+                padding.py
+                pager.py
+                palette.py
+                panel.py
+                pretty.py
+                progress.py
+                progress_bar.py
+                prompt.py
+                protocol.py
+                py.typed
+                region.py
+                repr.py
+                rule.py
+                scope.py
+                screen.py
+                segment.py
+                spinner.py
+                status.py
+                style.py
+                styled.py
+                syntax.py
+                table.py
+                terminal_theme.py
+                text.py
+                theme.py
+                themes.py
+                traceback.py
+                tree.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/rich/__pycache__/
+                  __init__.cpython-311.pyc
+                  __main__.cpython-311.pyc
+                  _cell_widths.cpython-311.pyc
+                  _emoji_codes.cpython-311.pyc
+                  _emoji_replace.cpython-311.pyc
+                  _export_format.cpython-311.pyc
+                  _extension.cpython-311.pyc
+                  _fileno.cpython-311.pyc
+                  _inspect.cpython-311.pyc
+                  _log_render.cpython-311.pyc
+                  _loop.cpython-311.pyc
+                  _null_file.cpython-311.pyc
+                  _palettes.cpython-311.pyc
+                  _pick.cpython-311.pyc
+                  _ratio.cpython-311.pyc
+                  _spinners.cpython-311.pyc
+                  _stack.cpython-311.pyc
+                  _timer.cpython-311.pyc
+                  _win32_console.cpython-311.pyc
+                  _windows.cpython-311.pyc
+                  _windows_renderer.cpython-311.pyc
+                  _wrap.cpython-311.pyc
+                  abc.cpython-311.pyc
+                  align.cpython-311.pyc
+                  ansi.cpython-311.pyc
+                  bar.cpython-311.pyc
+                  box.cpython-311.pyc
+                  cells.cpython-311.pyc
+                  color.cpython-311.pyc
+                  color_triplet.cpython-311.pyc
+                  columns.cpython-311.pyc
+                  console.cpython-311.pyc
+                  constrain.cpython-311.pyc
+                  containers.cpython-311.pyc
+                  control.cpython-311.pyc
+                  default_styles.cpython-311.pyc
+                  diagnose.cpython-311.pyc
+                  emoji.cpython-311.pyc
+                  errors.cpython-311.pyc
+                  file_proxy.cpython-311.pyc
+                  filesize.cpython-311.pyc
+                  highlighter.cpython-311.pyc
+                  json.cpython-311.pyc
+                  jupyter.cpython-311.pyc
+                  layout.cpython-311.pyc
+                  live.cpython-311.pyc
+                  live_render.cpython-311.pyc
+                  logging.cpython-311.pyc
+                  markup.cpython-311.pyc
+                  measure.cpython-311.pyc
+                  padding.cpython-311.pyc
+                  pager.cpython-311.pyc
+                  palette.cpython-311.pyc
+                  panel.cpython-311.pyc
+                  pretty.cpython-311.pyc
+                  progress.cpython-311.pyc
+                  progress_bar.cpython-311.pyc
+                  prompt.cpython-311.pyc
+                  protocol.cpython-311.pyc
+                  region.cpython-311.pyc
+                  repr.cpython-311.pyc
+                  rule.cpython-311.pyc
+                  scope.cpython-311.pyc
+                  screen.cpython-311.pyc
+                  segment.cpython-311.pyc
+                  spinner.cpython-311.pyc
+                  status.cpython-311.pyc
+                  style.cpython-311.pyc
+                  styled.cpython-311.pyc
+                  syntax.cpython-311.pyc
+                  table.cpython-311.pyc
+                  terminal_theme.cpython-311.pyc
+                  text.cpython-311.pyc
+                  theme.cpython-311.pyc
+                  themes.cpython-311.pyc
+                  traceback.cpython-311.pyc
+                  tree.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/tomli/
+                __init__.py
+                _parser.py
+                _re.py
+                _types.py
+                py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/tomli/__pycache__/
+                  __init__.cpython-311.pyc
+                  _parser.cpython-311.pyc
+                  _re.cpython-311.pyc
+                  _types.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/tomli_w/
+                __init__.py
+                _writer.py
+                py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/tomli_w/__pycache__/
+                  __init__.cpython-311.pyc
+                  _writer.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/truststore/
+                __init__.py
+                _api.py
+                _macos.py
+                _openssl.py
+                _ssl_constants.py
+                _windows.py
+                py.typed
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/truststore/__pycache__/
+                  __init__.cpython-311.pyc
+                  _api.cpython-311.pyc
+                  _macos.cpython-311.pyc
+                  _openssl.cpython-311.pyc
+                  _ssl_constants.cpython-311.pyc
+                  _windows.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/
+                __init__.py
+                _collections.py
+                _version.py
+                connection.py
+                connectionpool.py
+                exceptions.py
+                fields.py
+                filepost.py
+                poolmanager.py
+                request.py
+                response.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/__pycache__/
+                  __init__.cpython-311.pyc
+                  _collections.cpython-311.pyc
+                  _version.cpython-311.pyc
+                  connection.cpython-311.pyc
+                  connectionpool.cpython-311.pyc
+                  exceptions.cpython-311.pyc
+                  fields.cpython-311.pyc
+                  filepost.cpython-311.pyc
+                  poolmanager.cpython-311.pyc
+                  request.cpython-311.pyc
+                  response.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/
+                  __init__.py
+                  _appengine_environ.py
+                  appengine.py
+                  ntlmpool.py
+                  pyopenssl.py
+                  securetransport.py
+                  socks.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/__pycache__/
+                    __init__.cpython-311.pyc
+                    _appengine_environ.cpython-311.pyc
+                    appengine.cpython-311.pyc
+                    ntlmpool.cpython-311.pyc
+                    pyopenssl.cpython-311.pyc
+                    securetransport.cpython-311.pyc
+                    socks.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/
+                    __init__.py
+                    bindings.py
+                    low_level.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__/
+                      __init__.cpython-311.pyc
+                      bindings.cpython-311.pyc
+                      low_level.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/
+                  __init__.py
+                  six.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/__pycache__/
+                    __init__.cpython-311.pyc
+                    six.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/backports/
+                    __init__.py
+                    makefile.py
+                    weakref_finalize.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__/
+                      __init__.cpython-311.pyc
+                      makefile.cpython-311.pyc
+                      weakref_finalize.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/util/
+                  __init__.py
+                  connection.py
+                  proxy.py
+                  queue.py
+                  request.py
+                  response.py
+                  retry.py
+                  ssl_.py
+                  ssl_match_hostname.py
+                  ssltransport.py
+                  timeout.py
+                  url.py
+                  wait.py
+RecibosDigitales/.venv/Lib/site-packages/pip/_vendor/urllib3/util/__pycache__/
+                    __init__.cpython-311.pyc
+                    connection.cpython-311.pyc
+                    proxy.cpython-311.pyc
+                    queue.cpython-311.pyc
+                    request.cpython-311.pyc
+                    response.cpython-311.pyc
+                    retry.cpython-311.pyc
+                    ssl_.cpython-311.pyc
+                    ssl_match_hostname.cpython-311.pyc
+                    ssltransport.cpython-311.pyc
+                    timeout.cpython-311.pyc
+                    url.cpython-311.pyc
+                    wait.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            REQUESTED
+            WHEEL
+            entry_points.txt
+            top_level.txt
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/
+              AUTHORS.txt
+              LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/cachecontrol/
+                      LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/certifi/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/dependency_groups/
+                      LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/distlib/
+                      LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/distro/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/idna/
+                      LICENSE.md
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/msgpack/
+                      COPYING
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/packaging/
+                      LICENSE
+                      LICENSE.APACHE
+                      LICENSE.BSD
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/pkg_resources/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/platformdirs/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/pygments/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/pyproject_hooks/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/requests/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/resolvelib/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/rich/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/tomli/
+                      LICENSE
+                      LICENSE-HEADER
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/tomli_w/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/truststore/
+                      LICENSE
+RecibosDigitales/.venv/Lib/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/urllib3/
+                      LICENSE.txt
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/
+            __init__.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/__pycache__/
+              __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/
+              __init__.py
+              appdirs.py
+              zipp.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/__pycache__/
+                __init__.cpython-311.pyc
+                appdirs.cpython-311.pyc
+                zipp.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/importlib_resources/
+                __init__.py
+                _adapters.py
+                _common.py
+                _compat.py
+                _itertools.py
+                _legacy.py
+                abc.py
+                readers.py
+                simple.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/importlib_resources/__pycache__/
+                  __init__.cpython-311.pyc
+                  _adapters.cpython-311.pyc
+                  _common.cpython-311.pyc
+                  _compat.cpython-311.pyc
+                  _itertools.cpython-311.pyc
+                  _legacy.cpython-311.pyc
+                  abc.cpython-311.pyc
+                  readers.cpython-311.pyc
+                  simple.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/jaraco/
+                __init__.py
+                context.py
+                functools.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/jaraco/__pycache__/
+                  __init__.cpython-311.pyc
+                  context.cpython-311.pyc
+                  functools.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/jaraco/text/
+                  __init__.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/jaraco/text/__pycache__/
+                    __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/more_itertools/
+                __init__.py
+                more.py
+                recipes.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/more_itertools/__pycache__/
+                  __init__.cpython-311.pyc
+                  more.cpython-311.pyc
+                  recipes.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/packaging/
+                __about__.py
+                __init__.py
+                _manylinux.py
+                _musllinux.py
+                _structures.py
+                markers.py
+                requirements.py
+                specifiers.py
+                tags.py
+                utils.py
+                version.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/packaging/__pycache__/
+                  __about__.cpython-311.pyc
+                  __init__.cpython-311.pyc
+                  _manylinux.cpython-311.pyc
+                  _musllinux.cpython-311.pyc
+                  _structures.cpython-311.pyc
+                  markers.cpython-311.pyc
+                  requirements.cpython-311.pyc
+                  specifiers.cpython-311.pyc
+                  tags.cpython-311.pyc
+                  utils.cpython-311.pyc
+                  version.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/
+                __init__.py
+                actions.py
+                common.py
+                core.py
+                exceptions.py
+                helpers.py
+                results.py
+                testing.py
+                unicode.py
+                util.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/__pycache__/
+                  __init__.cpython-311.pyc
+                  actions.cpython-311.pyc
+                  common.cpython-311.pyc
+                  core.cpython-311.pyc
+                  exceptions.cpython-311.pyc
+                  helpers.cpython-311.pyc
+                  results.cpython-311.pyc
+                  testing.cpython-311.pyc
+                  unicode.cpython-311.pyc
+                  util.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/diagram/
+                  __init__.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/diagram/__pycache__/
+                    __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/extern/
+              __init__.py
+RecibosDigitales/.venv/Lib/site-packages/pkg_resources/extern/__pycache__/
+                __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/pypdf2-3.0.1.dist-info/
+            INSTALLER
+            LICENSE
+            METADATA
+            RECORD
+            REQUESTED
+            WHEEL
+RecibosDigitales/.venv/Lib/site-packages/qrcode/
+            LUT.py
+            __init__.py
+            base.py
+            console_scripts.py
+            constants.py
+            exceptions.py
+            main.py
+            release.py
+            util.py
+RecibosDigitales/.venv/Lib/site-packages/qrcode/__pycache__/
+              LUT.cpython-311.pyc
+              __init__.cpython-311.pyc
+              base.cpython-311.pyc
+              console_scripts.cpython-311.pyc
+              constants.cpython-311.pyc
+              exceptions.cpython-311.pyc
+              main.cpython-311.pyc
+              release.cpython-311.pyc
+              util.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/qrcode/compat/
+              __init__.py
+              etree.py
+              png.py
+RecibosDigitales/.venv/Lib/site-packages/qrcode/compat/__pycache__/
+                __init__.cpython-311.pyc
+                etree.cpython-311.pyc
+                png.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/qrcode/image/
+              __init__.py
+              base.py
+              pil.py
+              pure.py
+              styledpil.py
+              svg.py
+RecibosDigitales/.venv/Lib/site-packages/qrcode/image/__pycache__/
+                __init__.cpython-311.pyc
+                base.cpython-311.pyc
+                pil.cpython-311.pyc
+                pure.cpython-311.pyc
+                styledpil.cpython-311.pyc
+                svg.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/qrcode/image/styles/
+                __init__.py
+                colormasks.py
+RecibosDigitales/.venv/Lib/site-packages/qrcode/image/styles/__pycache__/
+                  __init__.cpython-311.pyc
+                  colormasks.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/qrcode/image/styles/moduledrawers/
+                  __init__.py
+                  base.py
+                  pil.py
+                  svg.py
+RecibosDigitales/.venv/Lib/site-packages/qrcode/image/styles/moduledrawers/__pycache__/
+                    __init__.cpython-311.pyc
+                    base.cpython-311.pyc
+                    pil.cpython-311.pyc
+                    svg.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/qrcode/tests/
+              __init__.py
+              consts.py
+              test_example.py
+              test_qrcode.py
+              test_qrcode_pil.py
+              test_qrcode_pypng.py
+              test_qrcode_svg.py
+              test_release.py
+              test_script.py
+              test_util.py
+RecibosDigitales/.venv/Lib/site-packages/qrcode/tests/__pycache__/
+                __init__.cpython-311.pyc
+                consts.cpython-311.pyc
+                test_example.cpython-311.pyc
+                test_qrcode.cpython-311.pyc
+                test_qrcode_pil.cpython-311.pyc
+                test_qrcode_pypng.cpython-311.pyc
+                test_qrcode_svg.cpython-311.pyc
+                test_release.cpython-311.pyc
+                test_script.cpython-311.pyc
+                test_util.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/qrcode-8.2.dist-info/
+            INSTALLER
+            LICENSE
+            METADATA
+            RECORD
+            REQUESTED
+            WHEEL
+            entry_points.txt
+RecibosDigitales/.venv/Lib/site-packages/reportlab/
+            __init__.py
+            rl_config.py
+            rl_settings.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/__pycache__/
+              __init__.cpython-311.pyc
+              rl_config.cpython-311.pyc
+              rl_settings.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/fonts/
+              00readme.txt
+              DarkGarden-changelog.txt
+              DarkGarden-copying-gpl.txt
+              DarkGarden-copying.txt
+              DarkGarden-readme.txt
+              DarkGarden.sfd
+              DarkGardenMK.afm
+              DarkGardenMK.pfb
+              Vera.ttf
+              VeraBI.ttf
+              VeraBd.ttf
+              VeraIt.ttf
+              _a______.pfb
+              _ab_____.pfb
+              _abi____.pfb
+              _ai_____.pfb
+              _eb_____.pfb
+              _ebi____.pfb
+              _ei_____.pfb
+              _er_____.pfb
+              bitstream-vera-license.txt
+              callig15.afm
+              callig15.pfb
+              cob_____.pfb
+              cobo____.pfb
+              com_____.pfb
+              coo_____.pfb
+              hb-test.ttf
+              sy______.pfb
+              zd______.pfb
+              zx______.pfb
+              zy______.pfb
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/
+              __init__.py
+              renderPDF.py
+              renderPM.py
+              renderPS.py
+              renderSVG.py
+              renderbase.py
+              shapes.py
+              svgpath.py
+              testdrawings.py
+              testshapes.py
+              transform.py
+              utils.py
+              widgetbase.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/__pycache__/
+                __init__.cpython-311.pyc
+                renderPDF.cpython-311.pyc
+                renderPM.cpython-311.pyc
+                renderPS.cpython-311.pyc
+                renderSVG.cpython-311.pyc
+                renderbase.cpython-311.pyc
+                shapes.cpython-311.pyc
+                svgpath.cpython-311.pyc
+                testdrawings.cpython-311.pyc
+                testshapes.cpython-311.pyc
+                transform.cpython-311.pyc
+                utils.cpython-311.pyc
+                widgetbase.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/barcode/
+                __init__.py
+                code128.py
+                code39.py
+                code93.py
+                common.py
+                dmtx.py
+                eanbc.py
+                ecc200datamatrix.py
+                fourstate.py
+                lto.py
+                qr.py
+                qrencoder.py
+                test.py
+                usps.py
+                usps4s.py
+                widgets.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/barcode/__pycache__/
+                  __init__.cpython-311.pyc
+                  code128.cpython-311.pyc
+                  code39.cpython-311.pyc
+                  code93.cpython-311.pyc
+                  common.cpython-311.pyc
+                  dmtx.cpython-311.pyc
+                  eanbc.cpython-311.pyc
+                  ecc200datamatrix.cpython-311.pyc
+                  fourstate.cpython-311.pyc
+                  lto.cpython-311.pyc
+                  qr.cpython-311.pyc
+                  qrencoder.cpython-311.pyc
+                  test.cpython-311.pyc
+                  usps.cpython-311.pyc
+                  usps4s.cpython-311.pyc
+                  widgets.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/charts/
+                __init__.py
+                areas.py
+                axes.py
+                barcharts.py
+                dotbox.py
+                doughnut.py
+                legends.py
+                linecharts.py
+                lineplots.py
+                markers.py
+                piecharts.py
+                slidebox.py
+                spider.py
+                textlabels.py
+                utils.py
+                utils3d.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/charts/__pycache__/
+                  __init__.cpython-311.pyc
+                  areas.cpython-311.pyc
+                  axes.cpython-311.pyc
+                  barcharts.cpython-311.pyc
+                  dotbox.cpython-311.pyc
+                  doughnut.cpython-311.pyc
+                  legends.cpython-311.pyc
+                  linecharts.cpython-311.pyc
+                  lineplots.cpython-311.pyc
+                  markers.cpython-311.pyc
+                  piecharts.cpython-311.pyc
+                  slidebox.cpython-311.pyc
+                  spider.cpython-311.pyc
+                  textlabels.cpython-311.pyc
+                  utils.cpython-311.pyc
+                  utils3d.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/samples/
+                __init__.py
+                bubble.py
+                clustered_bar.py
+                clustered_column.py
+                excelcolors.py
+                exploded_pie.py
+                filled_radar.py
+                line_chart.py
+                linechart_with_markers.py
+                radar.py
+                runall.py
+                scatter.py
+                scatter_lines.py
+                scatter_lines_markers.py
+                simple_pie.py
+                stacked_bar.py
+                stacked_column.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/samples/__pycache__/
+                  __init__.cpython-311.pyc
+                  bubble.cpython-311.pyc
+                  clustered_bar.cpython-311.pyc
+                  clustered_column.cpython-311.pyc
+                  excelcolors.cpython-311.pyc
+                  exploded_pie.cpython-311.pyc
+                  filled_radar.cpython-311.pyc
+                  line_chart.cpython-311.pyc
+                  linechart_with_markers.cpython-311.pyc
+                  radar.cpython-311.pyc
+                  runall.cpython-311.pyc
+                  scatter.cpython-311.pyc
+                  scatter_lines.cpython-311.pyc
+                  scatter_lines_markers.cpython-311.pyc
+                  simple_pie.cpython-311.pyc
+                  stacked_bar.cpython-311.pyc
+                  stacked_column.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/widgets/
+                __init__.py
+                adjustableArrow.py
+                eventcal.py
+                flags.py
+                grids.py
+                markers.py
+                signsandsymbols.py
+                table.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/graphics/widgets/__pycache__/
+                  __init__.cpython-311.pyc
+                  adjustableArrow.cpython-311.pyc
+                  eventcal.cpython-311.pyc
+                  flags.cpython-311.pyc
+                  grids.cpython-311.pyc
+                  markers.cpython-311.pyc
+                  signsandsymbols.cpython-311.pyc
+                  table.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/lib/
+              PyFontify.py
+              __init__.py
+              abag.py
+              arciv.py
+              attrmap.py
+              boxstuff.py
+              codecharts.py
+              colors.py
+              corp.py
+              enums.py
+              extformat.py
+              fontfinder.py
+              fonts.py
+              formatters.py
+              geomutils.py
+              logger.py
+              normalDate.py
+              pagesizes.py
+              pdfencrypt.py
+              pygments2xpre.py
+              randomtext.py
+              rl_accel.py
+              rl_safe_eval.py
+              rltempfile.py
+              rparsexml.py
+              sequencer.py
+              styles.py
+              testutils.py
+              textsplit.py
+              units.py
+              utils.py
+              validators.py
+              yaml.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/lib/__pycache__/
+                PyFontify.cpython-311.pyc
+                __init__.cpython-311.pyc
+                abag.cpython-311.pyc
+                arciv.cpython-311.pyc
+                attrmap.cpython-311.pyc
+                boxstuff.cpython-311.pyc
+                codecharts.cpython-311.pyc
+                colors.cpython-311.pyc
+                corp.cpython-311.pyc
+                enums.cpython-311.pyc
+                extformat.cpython-311.pyc
+                fontfinder.cpython-311.pyc
+                fonts.cpython-311.pyc
+                formatters.cpython-311.pyc
+                geomutils.cpython-311.pyc
+                logger.cpython-311.pyc
+                normalDate.cpython-311.pyc
+                pagesizes.cpython-311.pyc
+                pdfencrypt.cpython-311.pyc
+                pygments2xpre.cpython-311.pyc
+                randomtext.cpython-311.pyc
+                rl_accel.cpython-311.pyc
+                rl_safe_eval.cpython-311.pyc
+                rltempfile.cpython-311.pyc
+                rparsexml.cpython-311.pyc
+                sequencer.cpython-311.pyc
+                styles.cpython-311.pyc
+                testutils.cpython-311.pyc
+                textsplit.cpython-311.pyc
+                units.cpython-311.pyc
+                utils.cpython-311.pyc
+                validators.cpython-311.pyc
+                yaml.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/pdfbase/
+              __init__.py
+              _can_cmap_data.py
+              _cidfontdata.py
+              _fontdata.py
+              _fontdata_enc_macexpert.py
+              _fontdata_enc_macroman.py
+              _fontdata_enc_pdfdoc.py
+              _fontdata_enc_standard.py
+              _fontdata_enc_symbol.py
+              _fontdata_enc_winansi.py
+              _fontdata_enc_zapfdingbats.py
+              _fontdata_widths_courier.py
+              _fontdata_widths_courierbold.py
+              _fontdata_widths_courierboldoblique.py
+              _fontdata_widths_courieroblique.py
+              _fontdata_widths_helvetica.py
+              _fontdata_widths_helveticabold.py
+              _fontdata_widths_helveticaboldoblique.py
+              _fontdata_widths_helveticaoblique.py
+              _fontdata_widths_symbol.py
+              _fontdata_widths_timesbold.py
+              _fontdata_widths_timesbolditalic.py
+              _fontdata_widths_timesitalic.py
+              _fontdata_widths_timesroman.py
+              _fontdata_widths_zapfdingbats.py
+              _glyphlist.py
+              acroform.py
+              cidfonts.py
+              pdfdoc.py
+              pdfform.py
+              pdfmetrics.py
+              pdfpattern.py
+              pdfutils.py
+              rl_codecs.py
+              ttfonts.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/pdfbase/__pycache__/
+                __init__.cpython-311.pyc
+                _can_cmap_data.cpython-311.pyc
+                _cidfontdata.cpython-311.pyc
+                _fontdata.cpython-311.pyc
+                _fontdata_enc_macexpert.cpython-311.pyc
+                _fontdata_enc_macroman.cpython-311.pyc
+                _fontdata_enc_pdfdoc.cpython-311.pyc
+                _fontdata_enc_standard.cpython-311.pyc
+                _fontdata_enc_symbol.cpython-311.pyc
+                _fontdata_enc_winansi.cpython-311.pyc
+                _fontdata_enc_zapfdingbats.cpython-311.pyc
+                _fontdata_widths_courier.cpython-311.pyc
+                _fontdata_widths_courierbold.cpython-311.pyc
+                _fontdata_widths_courierboldoblique.cpython-311.pyc
+                _fontdata_widths_courieroblique.cpython-311.pyc
+                _fontdata_widths_helvetica.cpython-311.pyc
+                _fontdata_widths_helveticabold.cpython-311.pyc
+                _fontdata_widths_helveticaboldoblique.cpython-311.pyc
+                _fontdata_widths_helveticaoblique.cpython-311.pyc
+                _fontdata_widths_symbol.cpython-311.pyc
+                _fontdata_widths_timesbold.cpython-311.pyc
+                _fontdata_widths_timesbolditalic.cpython-311.pyc
+                _fontdata_widths_timesitalic.cpython-311.pyc
+                _fontdata_widths_timesroman.cpython-311.pyc
+                _fontdata_widths_zapfdingbats.cpython-311.pyc
+                _glyphlist.cpython-311.pyc
+                acroform.cpython-311.pyc
+                cidfonts.cpython-311.pyc
+                pdfdoc.cpython-311.pyc
+                pdfform.cpython-311.pyc
+                pdfmetrics.cpython-311.pyc
+                pdfpattern.cpython-311.pyc
+                pdfutils.cpython-311.pyc
+                rl_codecs.cpython-311.pyc
+                ttfonts.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/pdfgen/
+              __init__.py
+              canvas.py
+              pathobject.py
+              pdfgeom.py
+              pdfimages.py
+              textobject.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/pdfgen/__pycache__/
+                __init__.cpython-311.pyc
+                canvas.cpython-311.pyc
+                pathobject.cpython-311.pyc
+                pdfgeom.cpython-311.pyc
+                pdfimages.cpython-311.pyc
+                textobject.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab/platypus/
+              __init__.py
+              doctemplate.py
+              figures.py
+              flowables.py
+              frames.py
+              multicol.py
+              para.py
+              paragraph.py
+              paraparser.py
+              tableofcontents.py
+              tables.py
+              xpreformatted.py
+RecibosDigitales/.venv/Lib/site-packages/reportlab/platypus/__pycache__/
+                __init__.cpython-311.pyc
+                doctemplate.cpython-311.pyc
+                figures.cpython-311.pyc
+                flowables.cpython-311.pyc
+                frames.cpython-311.pyc
+                multicol.cpython-311.pyc
+                para.cpython-311.pyc
+                paragraph.cpython-311.pyc
+                paraparser.cpython-311.pyc
+                tableofcontents.cpython-311.pyc
+                tables.cpython-311.pyc
+                xpreformatted.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/reportlab-4.4.3.dist-info/
+            INSTALLER
+            METADATA
+            RECORD
+            REQUESTED
+            WHEEL
+            top_level.txt
+RecibosDigitales/.venv/Lib/site-packages/reportlab-4.4.3.dist-info/licenses/
+              LICENSE
+RecibosDigitales/.venv/Lib/site-packages/setuptools/
+            __init__.py
+            _deprecation_warning.py
+            _entry_points.py
+            _imp.py
+            _importlib.py
+            _itertools.py
+            _path.py
+            _reqs.py
+            archive_util.py
+            build_meta.py
+            cli-32.exe
+            cli-64.exe
+            cli-arm64.exe
+            cli.exe
+            dep_util.py
+            depends.py
+            discovery.py
+            dist.py
+            errors.py
+            extension.py
+            glob.py
+            gui-32.exe
+            gui-64.exe
+            gui-arm64.exe
+            gui.exe
+            installer.py
+            launch.py
+            logging.py
+            monkey.py
+            msvc.py
+            namespaces.py
+            package_index.py
+            py34compat.py
+            sandbox.py
+            script (dev).tmpl
+            script.tmpl
+            unicode_utils.py
+            version.py
+            wheel.py
+            windows_support.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/__pycache__/
+              __init__.cpython-311.pyc
+              _deprecation_warning.cpython-311.pyc
+              _entry_points.cpython-311.pyc
+              _imp.cpython-311.pyc
+              _importlib.cpython-311.pyc
+              _itertools.cpython-311.pyc
+              _path.cpython-311.pyc
+              _reqs.cpython-311.pyc
+              archive_util.cpython-311.pyc
+              build_meta.cpython-311.pyc
+              dep_util.cpython-311.pyc
+              depends.cpython-311.pyc
+              discovery.cpython-311.pyc
+              dist.cpython-311.pyc
+              errors.cpython-311.pyc
+              extension.cpython-311.pyc
+              glob.cpython-311.pyc
+              installer.cpython-311.pyc
+              launch.cpython-311.pyc
+              logging.cpython-311.pyc
+              monkey.cpython-311.pyc
+              msvc.cpython-311.pyc
+              namespaces.cpython-311.pyc
+              package_index.cpython-311.pyc
+              py34compat.cpython-311.pyc
+              sandbox.cpython-311.pyc
+              unicode_utils.cpython-311.pyc
+              version.cpython-311.pyc
+              wheel.cpython-311.pyc
+              windows_support.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_distutils/
+              __init__.py
+              _collections.py
+              _functools.py
+              _macos_compat.py
+              _msvccompiler.py
+              archive_util.py
+              bcppcompiler.py
+              ccompiler.py
+              cmd.py
+              config.py
+              core.py
+              cygwinccompiler.py
+              debug.py
+              dep_util.py
+              dir_util.py
+              dist.py
+              errors.py
+              extension.py
+              fancy_getopt.py
+              file_util.py
+              filelist.py
+              log.py
+              msvc9compiler.py
+              msvccompiler.py
+              py38compat.py
+              py39compat.py
+              spawn.py
+              sysconfig.py
+              text_file.py
+              unixccompiler.py
+              util.py
+              version.py
+              versionpredicate.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_distutils/__pycache__/
+                __init__.cpython-311.pyc
+                _collections.cpython-311.pyc
+                _functools.cpython-311.pyc
+                _macos_compat.cpython-311.pyc
+                _msvccompiler.cpython-311.pyc
+                archive_util.cpython-311.pyc
+                bcppcompiler.cpython-311.pyc
+                ccompiler.cpython-311.pyc
+                cmd.cpython-311.pyc
+                config.cpython-311.pyc
+                core.cpython-311.pyc
+                cygwinccompiler.cpython-311.pyc
+                debug.cpython-311.pyc
+                dep_util.cpython-311.pyc
+                dir_util.cpython-311.pyc
+                dist.cpython-311.pyc
+                errors.cpython-311.pyc
+                extension.cpython-311.pyc
+                fancy_getopt.cpython-311.pyc
+                file_util.cpython-311.pyc
+                filelist.cpython-311.pyc
+                log.cpython-311.pyc
+                msvc9compiler.cpython-311.pyc
+                msvccompiler.cpython-311.pyc
+                py38compat.cpython-311.pyc
+                py39compat.cpython-311.pyc
+                spawn.cpython-311.pyc
+                sysconfig.cpython-311.pyc
+                text_file.cpython-311.pyc
+                unixccompiler.cpython-311.pyc
+                util.cpython-311.pyc
+                version.cpython-311.pyc
+                versionpredicate.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_distutils/command/
+                __init__.py
+                _framework_compat.py
+                bdist.py
+                bdist_dumb.py
+                bdist_rpm.py
+                build.py
+                build_clib.py
+                build_ext.py
+                build_py.py
+                build_scripts.py
+                check.py
+                clean.py
+                config.py
+                install.py
+                install_data.py
+                install_egg_info.py
+                install_headers.py
+                install_lib.py
+                install_scripts.py
+                py37compat.py
+                register.py
+                sdist.py
+                upload.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_distutils/command/__pycache__/
+                  __init__.cpython-311.pyc
+                  _framework_compat.cpython-311.pyc
+                  bdist.cpython-311.pyc
+                  bdist_dumb.cpython-311.pyc
+                  bdist_rpm.cpython-311.pyc
+                  build.cpython-311.pyc
+                  build_clib.cpython-311.pyc
+                  build_ext.cpython-311.pyc
+                  build_py.cpython-311.pyc
+                  build_scripts.cpython-311.pyc
+                  check.cpython-311.pyc
+                  clean.cpython-311.pyc
+                  config.cpython-311.pyc
+                  install.cpython-311.pyc
+                  install_data.cpython-311.pyc
+                  install_egg_info.cpython-311.pyc
+                  install_headers.cpython-311.pyc
+                  install_lib.cpython-311.pyc
+                  install_scripts.cpython-311.pyc
+                  py37compat.cpython-311.pyc
+                  register.cpython-311.pyc
+                  sdist.cpython-311.pyc
+                  upload.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/
+              __init__.py
+              ordered_set.py
+              typing_extensions.py
+              zipp.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/__pycache__/
+                __init__.cpython-311.pyc
+                ordered_set.cpython-311.pyc
+                typing_extensions.cpython-311.pyc
+                zipp.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/importlib_metadata/
+                __init__.py
+                _adapters.py
+                _collections.py
+                _compat.py
+                _functools.py
+                _itertools.py
+                _meta.py
+                _text.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/importlib_metadata/__pycache__/
+                  __init__.cpython-311.pyc
+                  _adapters.cpython-311.pyc
+                  _collections.cpython-311.pyc
+                  _compat.cpython-311.pyc
+                  _functools.cpython-311.pyc
+                  _itertools.cpython-311.pyc
+                  _meta.cpython-311.pyc
+                  _text.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/importlib_resources/
+                __init__.py
+                _adapters.py
+                _common.py
+                _compat.py
+                _itertools.py
+                _legacy.py
+                abc.py
+                readers.py
+                simple.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/importlib_resources/__pycache__/
+                  __init__.cpython-311.pyc
+                  _adapters.cpython-311.pyc
+                  _common.cpython-311.pyc
+                  _compat.cpython-311.pyc
+                  _itertools.cpython-311.pyc
+                  _legacy.cpython-311.pyc
+                  abc.cpython-311.pyc
+                  readers.cpython-311.pyc
+                  simple.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/jaraco/
+                __init__.py
+                context.py
+                functools.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/jaraco/__pycache__/
+                  __init__.cpython-311.pyc
+                  context.cpython-311.pyc
+                  functools.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/jaraco/text/
+                  __init__.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/jaraco/text/__pycache__/
+                    __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/more_itertools/
+                __init__.py
+                more.py
+                recipes.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/more_itertools/__pycache__/
+                  __init__.cpython-311.pyc
+                  more.cpython-311.pyc
+                  recipes.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/packaging/
+                __about__.py
+                __init__.py
+                _manylinux.py
+                _musllinux.py
+                _structures.py
+                markers.py
+                requirements.py
+                specifiers.py
+                tags.py
+                utils.py
+                version.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/packaging/__pycache__/
+                  __about__.cpython-311.pyc
+                  __init__.cpython-311.pyc
+                  _manylinux.cpython-311.pyc
+                  _musllinux.cpython-311.pyc
+                  _structures.cpython-311.pyc
+                  markers.cpython-311.pyc
+                  requirements.cpython-311.pyc
+                  specifiers.cpython-311.pyc
+                  tags.cpython-311.pyc
+                  utils.cpython-311.pyc
+                  version.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/pyparsing/
+                __init__.py
+                actions.py
+                common.py
+                core.py
+                exceptions.py
+                helpers.py
+                results.py
+                testing.py
+                unicode.py
+                util.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/pyparsing/__pycache__/
+                  __init__.cpython-311.pyc
+                  actions.cpython-311.pyc
+                  common.cpython-311.pyc
+                  core.cpython-311.pyc
+                  exceptions.cpython-311.pyc
+                  helpers.cpython-311.pyc
+                  results.cpython-311.pyc
+                  testing.cpython-311.pyc
+                  unicode.cpython-311.pyc
+                  util.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/pyparsing/diagram/
+                  __init__.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/pyparsing/diagram/__pycache__/
+                    __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/tomli/
+                __init__.py
+                _parser.py
+                _re.py
+                _types.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/_vendor/tomli/__pycache__/
+                  __init__.cpython-311.pyc
+                  _parser.cpython-311.pyc
+                  _re.cpython-311.pyc
+                  _types.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/command/
+              __init__.py
+              alias.py
+              bdist_egg.py
+              bdist_rpm.py
+              build.py
+              build_clib.py
+              build_ext.py
+              build_py.py
+              develop.py
+              dist_info.py
+              easy_install.py
+              editable_wheel.py
+              egg_info.py
+              install.py
+              install_egg_info.py
+              install_lib.py
+              install_scripts.py
+              launcher manifest.xml
+              py36compat.py
+              register.py
+              rotate.py
+              saveopts.py
+              sdist.py
+              setopt.py
+              test.py
+              upload.py
+              upload_docs.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/command/__pycache__/
+                __init__.cpython-311.pyc
+                alias.cpython-311.pyc
+                bdist_egg.cpython-311.pyc
+                bdist_rpm.cpython-311.pyc
+                build.cpython-311.pyc
+                build_clib.cpython-311.pyc
+                build_ext.cpython-311.pyc
+                build_py.cpython-311.pyc
+                develop.cpython-311.pyc
+                dist_info.cpython-311.pyc
+                easy_install.cpython-311.pyc
+                editable_wheel.cpython-311.pyc
+                egg_info.cpython-311.pyc
+                install.cpython-311.pyc
+                install_egg_info.cpython-311.pyc
+                install_lib.cpython-311.pyc
+                install_scripts.cpython-311.pyc
+                py36compat.cpython-311.pyc
+                register.cpython-311.pyc
+                rotate.cpython-311.pyc
+                saveopts.cpython-311.pyc
+                sdist.cpython-311.pyc
+                setopt.cpython-311.pyc
+                test.cpython-311.pyc
+                upload.cpython-311.pyc
+                upload_docs.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/config/
+              __init__.py
+              _apply_pyprojecttoml.py
+              expand.py
+              pyprojecttoml.py
+              setupcfg.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/config/__pycache__/
+                __init__.cpython-311.pyc
+                _apply_pyprojecttoml.cpython-311.pyc
+                expand.cpython-311.pyc
+                pyprojecttoml.cpython-311.pyc
+                setupcfg.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/config/_validate_pyproject/
+                __init__.py
+                error_reporting.py
+                extra_validations.py
+                fastjsonschema_exceptions.py
+                fastjsonschema_validations.py
+                formats.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/config/_validate_pyproject/__pycache__/
+                  __init__.cpython-311.pyc
+                  error_reporting.cpython-311.pyc
+                  extra_validations.cpython-311.pyc
+                  fastjsonschema_exceptions.cpython-311.pyc
+                  fastjsonschema_validations.cpython-311.pyc
+                  formats.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools/extern/
+              __init__.py
+RecibosDigitales/.venv/Lib/site-packages/setuptools/extern/__pycache__/
+                __init__.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/setuptools-65.5.0.dist-info/
+            INSTALLER
+            LICENSE
+            METADATA
+            RECORD
+            REQUESTED
+            WHEEL
+            entry_points.txt
+            top_level.txt
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/
+            __init__.py
+            _internal.py
+            _reloader.py
+            exceptions.py
+            formparser.py
+            http.py
+            local.py
+            py.typed
+            security.py
+            serving.py
+            test.py
+            testapp.py
+            urls.py
+            user_agent.py
+            utils.py
+            wsgi.py
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/__pycache__/
+              __init__.cpython-311.pyc
+              _internal.cpython-311.pyc
+              _reloader.cpython-311.pyc
+              exceptions.cpython-311.pyc
+              formparser.cpython-311.pyc
+              http.cpython-311.pyc
+              local.cpython-311.pyc
+              security.cpython-311.pyc
+              serving.cpython-311.pyc
+              test.cpython-311.pyc
+              testapp.cpython-311.pyc
+              urls.cpython-311.pyc
+              user_agent.cpython-311.pyc
+              utils.cpython-311.pyc
+              wsgi.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/datastructures/
+              __init__.py
+              accept.py
+              auth.py
+              cache_control.py
+              csp.py
+              etag.py
+              file_storage.py
+              headers.py
+              mixins.py
+              range.py
+              structures.py
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/datastructures/__pycache__/
+                __init__.cpython-311.pyc
+                accept.cpython-311.pyc
+                auth.cpython-311.pyc
+                cache_control.cpython-311.pyc
+                csp.cpython-311.pyc
+                etag.cpython-311.pyc
+                file_storage.cpython-311.pyc
+                headers.cpython-311.pyc
+                mixins.cpython-311.pyc
+                range.cpython-311.pyc
+                structures.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/debug/
+              __init__.py
+              console.py
+              repr.py
+              tbtools.py
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/debug/__pycache__/
+                __init__.cpython-311.pyc
+                console.cpython-311.pyc
+                repr.cpython-311.pyc
+                tbtools.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/debug/shared/
+                ICON_LICENSE.md
+                console.png
+                debugger.js
+                less.png
+                more.png
+                style.css
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/middleware/
+              __init__.py
+              dispatcher.py
+              http_proxy.py
+              lint.py
+              profiler.py
+              proxy_fix.py
+              shared_data.py
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/middleware/__pycache__/
+                __init__.cpython-311.pyc
+                dispatcher.cpython-311.pyc
+                http_proxy.cpython-311.pyc
+                lint.cpython-311.pyc
+                profiler.cpython-311.pyc
+                proxy_fix.cpython-311.pyc
+                shared_data.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/routing/
+              __init__.py
+              converters.py
+              exceptions.py
+              map.py
+              matcher.py
+              rules.py
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/routing/__pycache__/
+                __init__.cpython-311.pyc
+                converters.cpython-311.pyc
+                exceptions.cpython-311.pyc
+                map.cpython-311.pyc
+                matcher.cpython-311.pyc
+                rules.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/sansio/
+              __init__.py
+              http.py
+              multipart.py
+              request.py
+              response.py
+              utils.py
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/sansio/__pycache__/
+                __init__.cpython-311.pyc
+                http.cpython-311.pyc
+                multipart.cpython-311.pyc
+                request.cpython-311.pyc
+                response.cpython-311.pyc
+                utils.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/wrappers/
+              __init__.py
+              request.py
+              response.py
+RecibosDigitales/.venv/Lib/site-packages/werkzeug/wrappers/__pycache__/
+                __init__.cpython-311.pyc
+                request.cpython-311.pyc
+                response.cpython-311.pyc
+RecibosDigitales/.venv/Lib/site-packages/werkzeug-3.1.3.dist-info/
+            INSTALLER
+            LICENSE.txt
+            METADATA
+            RECORD
+            WHEEL
+RecibosDigitales/.venv/Scripts/
+        Activate.ps1
+        activate
+        activate.bat
+        deactivate.bat
+        flask.exe
+        normalizer.exe
+        pip.exe
+        pip3.11.exe
+        pip3.exe
+        python.exe
+        pythonw.exe
+        qr.exe
+RecibosDigitales/Templates/
+      recibo.html
+RecibosDigitales/__pycache__/
+      app.cpython-311.pyc
+      app.cpython-313.pyc
+      config.cpython-311.pyc
+      config.cpython-313.pyc
+RecibosDigitales/assets/
+      MODELO 2.pdf
+      TUCUMIND LOGO.png
+      firma.png
+      logo-onco-color.png
+      tucumind.ico
+      tucumind.png
+RecibosDigitales/build/
+RecibosDigitales/build/Recibos/
+        Analysis-00.toc
+        COLLECT-00.toc
+        EXE-00.toc
+        PKG-00.toc
+        PYZ-00.pyz
+        PYZ-00.toc
+        Recibos.exe
+        Recibos.pkg
+        base_library.zip
+        warn-Recibos.txt
+        xref-Recibos.html
+RecibosDigitales/build/Recibos/localpycs/
+          pyimod01_archive.pyc
+          pyimod02_importers.pyc
+          pyimod03_ctypes.pyc
+          pyimod04_pywin32.pyc
+          struct.pyc
+RecibosDigitales/data/
+      clientes.db
+RecibosDigitales/historial/
+      recibos.xlsx
+RecibosDigitales/interfaz/
+      anular.py
+      buscar_editar.py
+      nueva.py
+RecibosDigitales/interfaz/__pycache__/
+        anular.cpython-311.pyc
+        anular.cpython-313.pyc
+        buscar_editar.cpython-311.pyc
+        buscar_editar.cpython-313.pyc
+        nueva.cpython-311.pyc
+        nueva.cpython-313.pyc
+RecibosDigitales/recibos/
+      Recibo_0001-00000001__ANULADO.pdf
+      Recibo_0001-00000001__Cofaral.pdf
+      Recibo_0001-00000002__ANULADO.pdf
+      Recibo_0001-00000003__Cofaral.pdf
+      Recibo_0001-00000004__ANULADO.pdf
+      Recibo_0001-00000005__ANULADO.pdf
+      Recibo_0001-00000006__O.S._Del_Personal_Mosaista.pdf
+      Recibo_0001-00000007__O.S._del_Personal_mosaista.pdf
+      Recibo_0001-00000008__O.S._del_Personal_Mosaista.pdf
+      Recibo_0001-00000009__O.S._del_Personal_Mosaista.pdf
+      Recibo_0001-00000010__O.S._del_Personal_Mosaista.pdf
+      Recibo_0001-00000011__O.S._del_personal_mosaista.pdf
+      Recibo_0001-00000012__O.S._del_personal_mosaista.pdf
+      Recibo_0001-00000013__O.S._del_personal_mosaista.pdf
+      Recibo_0001-00000014__O.S._Del_Personal_Mosaista.pdf
+      Recibo_0001-00000015__Cofaral.pdf
+      Recibo_0001-00000016__Cofaral.pdf
+      Recibo_0001-00000017__Cofaral.pdf
+      Recibo_0001-00000018__Cofaral.pdf
+      Recibo_0001-00000019__O.S._Del_Personal_Mosaista.pdf
+      Recibo_0001-00000020__O.S._Del_Personal_Mosaista.pdf
+      Recibo_0001-00000021__Cofaral.pdf
+      Recibo_0001-00000022__O.S._Del_Personal_Mosaista.pdf
+      Recibo_0001-00000023__Cofaral.pdf
+      Recibo_0001-00000024__Cofaral.pdf
+      Recibo_0001-00000025__Cofaral.pdf
+      Recibo_0001-00000026__Cofaral.pdf
+      Recibo_0001-00000027__Cofaral.pdf
+      Recibo_0001-00000028__Cofaral.pdf
+      Recibo_0001-00000029__Cofaral.pdf
+      Recibo_0001-00000030__Cofaral.pdf
+      Recibo_0001-00000031__Cofaral.pdf
+      Recibo_0001-00000032__Cofaral.pdf
+      Recibo_0001-00000033__Cofaral.pdf
+      Recibo_0001-00000034__Cofaral.pdf
+      Recibo_0001-00000035__ANULADO.pdf
+      Recibo_0001-00000036__Cofaral.pdf
+      Recibo_0001-00000037__Cofaral.pdf
+      Recibo_0001-00000038__Cofaral.pdf
+      Recibo_0001-00000039__Cofaral.pdf
+      Recibo_0001-00000040__ANULADO.pdf
+      Recibo_0001-00000041__ANULADO.pdf
+      Recibo_0001-00000042__ANULADO.pdf
+      Recibo_0001-00000043__DR._Felipe_S._Palazzo.pdf
+      Recibo_0001-00000044__Ricardo_C._Mora_y_CIA_SRL.pdf
+      Recibo_0001-00000045__ANULADO.pdf
+      Recibo_0001-00000046__ANULADO.pdf
+      Recibo_0001-00000047__ANULADO.pdf
+      Recibo_0001-00000048__ANULADO.pdf
+      Recibo_0001-00000049__ANULADO.pdf
+      Recibo_0001-00000050__ANULADO.pdf
+      Recibo_0001-00000051__ANULADO.pdf
+      Recibo_0001-00000052__ANULADO.pdf
+      Recibo_0001-00000053__ANULADO.pdf
+      Recibo_0001-00000054__ANULADO.pdf
+      Recibo_0001-00000055__ANULADO.pdf
+      Recibo_0001-00000056__ANULADO.pdf
+      Recibo_0001-00000057__ANULADO.pdf
+      Recibo_0001-00000058__ANULADO.pdf
+      Recibo_0001-00000059__ANULADO.pdf
+      Recibo_0001-00000060__ANULADO.pdf
+      Recibo_0001-00000061__ANULADO.pdf
+      Recibo_0001-00000062__ANULADO.pdf
+      Recibo_0001-00000063__ANULADO.pdf
+      Recibo_0001-00000064__Hospital_Avellaneda.pdf
+      Recibo_0001-00000067__Ministerio_de_Salud.pdf
+      Recibo_1__ANULADO.pdf
+RecibosDigitales/utils/
+      clientes.py
+      contador.py
+      helpers.py
+      pdf_generator.py
+      qr_utils.py
+      recibo_utils.py
+RecibosDigitales/utils/__pycache__/
+        clientes.cpython-311.pyc
+        clientes.cpython-313.pyc
+        contador.cpython-311.pyc
+        contador.cpython-313.pyc
+        helpers.cpython-311.pyc
+        helpers.cpython-313.pyc
+        pdf_generator.cpython-311.pyc
+        pdf_generator.cpython-313.pyc
+        qr_utils.cpython-311.pyc
+        qr_utils.cpython-313.pyc
+        recibo_utils.cpython-311.pyc
+        recibo_utils.cpython-313.pyc
