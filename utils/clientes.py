@@ -11,33 +11,75 @@ def _conn():
     return sqlite3.connect(DB)
 
 def init_db():
+    """
+    Crea la tabla si no existe y migra esquemas antiguos que tenían
+    restricción UNIQUE en CUIT.
+    - Clave única: solo 'nombre'.
+    - 'cuit' ya NO es único para permitir clientes con mismo CUIT.
+    """
     with _conn() as cx:
-        cx.execute("""
-        CREATE TABLE IF NOT EXISTS clientes(
-            id INTEGER PRIMARY KEY,
-            nombre TEXT UNIQUE,
-            cuit   TEXT UNIQUE,
-            domicilio TEXT,
-            localidad TEXT,
-            iva TEXT
-        );
-        """)
+        # Crear si no existe con el esquema correcto (cuit sin UNIQUE)
+        cx.execute(
+            """
+            CREATE TABLE IF NOT EXISTS clientes(
+                id INTEGER PRIMARY KEY,
+                nombre TEXT UNIQUE,
+                cuit   TEXT,
+                domicilio TEXT,
+                localidad TEXT,
+                iva TEXT
+            );
+            """
+        )
+
+        # Detectar si la tabla existente aún tiene 'cuit TEXT UNIQUE'
+        cur = cx.execute("SELECT sql FROM sqlite_master WHERE type='table' AND name='clientes'")
+        row = cur.fetchone()
+        sql_def = row[0] if row else ""
+        if "cuit   TEXT UNIQUE" in (sql_def or ""):
+            # Migrar: recrear sin UNIQUE en CUIT
+            cx.execute(
+                """
+                CREATE TABLE IF NOT EXISTS clientes__new(
+                    id INTEGER PRIMARY KEY,
+                    nombre TEXT UNIQUE,
+                    cuit   TEXT,
+                    domicilio TEXT,
+                    localidad TEXT,
+                    iva TEXT
+                );
+                """
+            )
+            # Copiar datos
+            cx.execute(
+                """
+                INSERT OR IGNORE INTO clientes__new(id, nombre, cuit, domicilio, localidad, iva)
+                SELECT id, nombre, cuit, domicilio, localidad, iva FROM clientes;
+                """
+            )
+            # Reemplazar tabla
+            cx.execute("DROP TABLE clientes")
+            cx.execute("ALTER TABLE clientes__new RENAME TO clientes")
 
 def buscar_por_nombre_o_cuit(q: str):
     """
-    Devuelve tupla (nombre, cuit, domicilio, localidad, iva) o None
+    Devuelve tupla (nombre, cuit, domicilio, localidad, iva) o None.
+    Búsqueda SOLO por nombre exacto (insensible a mayúsculas/minúsculas).
+    Ya no se busca por CUIT para evitar ambigüedades.
     """
     q = (q or "").strip()
     if not q:
         return None
     with _conn() as cx:
-        cur = cx.execute("""
+        cur = cx.execute(
+            """
             SELECT nombre, cuit, domicilio, localidad, iva
             FROM clientes
             WHERE lower(nombre) = lower(?)
-               OR replace(cuit,'-','') = replace(?,'-','')
             LIMIT 1;
-        """, [q, q])
+            """,
+            [q],
+        )
         return cur.fetchone()
 
 def upsert_cliente(nombre, cuit, domicilio, localidad, iva):
@@ -46,7 +88,8 @@ def upsert_cliente(nombre, cuit, domicilio, localidad, iva):
     """
     nombre = (nombre or "").strip()
     with _conn() as cx:
-        cx.execute("""
+        cx.execute(
+            """
             INSERT INTO clientes(nombre, cuit, domicilio, localidad, iva)
             VALUES(?,?,?,?,?)
             ON CONFLICT(nombre) DO UPDATE SET
@@ -54,4 +97,6 @@ def upsert_cliente(nombre, cuit, domicilio, localidad, iva):
               domicilio=excluded.domicilio,
               localidad=excluded.localidad,
               iva=excluded.iva;
-        """, [nombre, cuit, domicilio, localidad, iva])
+            """,
+            [nombre, cuit, domicilio, localidad, iva],
+        )

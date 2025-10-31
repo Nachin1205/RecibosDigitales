@@ -1,5 +1,10 @@
 from pathlib import Path
-from openpyxl import load_workbook, Workbook
+import json
+try:
+    from openpyxl import load_workbook, Workbook
+except ModuleNotFoundError:
+    load_workbook = None
+    Workbook = None
 
 # Intentamos tomar la ruta del historial desde config.py; si no existe, usamos una por defecto
 try:
@@ -8,14 +13,30 @@ except Exception:
     HISTORIAL_XLSX = Path("historial/recibos.xlsx")
 
 def _asegurar_historial():
-    """Crea el archivo de historial si no existe, con las columnas estándar."""
+    """
+    Crea el archivo de historial si no existe, con columnas estándar y
+    agrega la columna opcional 'DatosJSON' si falta (para guardar el payload completo).
+    """
+    if Workbook is None:
+        # No explotamos al importar el módulo; explicamos al usarlo
+        raise RuntimeError("Falta la dependencia 'openpyxl'. Instalá con: pip install -r RecibosDigitales/requirements.txt")
     p = Path(HISTORIAL_XLSX)
     p.parent.mkdir(parents=True, exist_ok=True)
     if not p.exists():
         wb = Workbook()
         ws = wb.active
         ws.title = "Recibos"
-        ws.append(["Número", "Cliente", "Fecha", "Subtotal", "Total", "Estado"])
+        ws.append(["Número", "Cliente", "Fecha", "Subtotal", "Total", "Estado", "DatosJSON"])
+        wb.save(p)
+        return
+
+    # Si existe, asegurar que tenga la columna 'DatosJSON'
+    wb = load_workbook(p)
+    ws = wb.active
+    headers = [c.value for c in ws[1]] if ws.max_row >= 1 else []
+    if headers and (len(headers) < 7 or headers[6] != "DatosJSON"):
+        # Agregar encabezado en columna G (7)
+        ws.cell(row=1, column=7, value="DatosJSON")
         wb.save(p)
 def posible_duplicado(cliente: str, fecha: str, total: float) -> bool:
     """
@@ -60,3 +81,52 @@ def marcar_anulado(numero: str):
         ws.append([numero, "", "", "", "", "Anulado"])
 
     wb.save(HISTORIAL_XLSX)
+
+def upsert_historial_con_json(
+    numero: str,
+    cliente: str,
+    fecha: str,
+    subtotal: str | float | None,
+    total: str | float | None,
+    estado: str = "",
+    datos: dict | None = None,
+):
+    """
+    Inserta o actualiza la fila del historial por 'Número'.
+    Guarda además 'DatosJSON' (payload completo) en la columna 7 si se provee.
+    """
+    _asegurar_historial()
+    p = Path(HISTORIAL_XLSX)
+    wb = load_workbook(p)
+    ws = wb.active
+
+    json_str = None
+    if datos is not None:
+        try:
+            json_str = json.dumps(datos, ensure_ascii=False)
+        except Exception:
+            json_str = None
+
+    encontrado = False
+    for row in ws.iter_rows(min_row=2):
+        if str(row[0].value) == str(numero):
+            row[1].value = cliente
+            row[2].value = fecha
+            row[3].value = subtotal
+            row[4].value = total
+            row[5].value = estado
+            if json_str is not None:
+                # Columna 7
+                if ws.max_column < 7:
+                    ws.cell(row=1, column=7, value="DatosJSON")
+                ws.cell(row=row[0].row, column=7, value=json_str)
+            encontrado = True
+            break
+
+    if not encontrado:
+        # Asegurar encabezado JSON
+        if ws.max_column < 7:
+            ws.cell(row=1, column=7, value="DatosJSON")
+        ws.append([numero, cliente, fecha, subtotal, total, estado, json_str])
+
+    wb.save(p)

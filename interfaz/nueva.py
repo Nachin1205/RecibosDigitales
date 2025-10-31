@@ -8,6 +8,7 @@ import re
 from utils.clientes import init_db, buscar_por_nombre_o_cuit, upsert_cliente
 from utils.helpers import validar_fecha_no_futura
 from utils.recibo_utils import posible_duplicado
+from utils.recibo_utils import upsert_historial_con_json
 from utils.pdf_generator import generar_pdf
 from utils.contador import ver_numero_siguiente, incrementar_contador
 
@@ -350,6 +351,20 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
                 qr_data=qr_payload,
                 template_pdf=str(ASSETS_DIR / "MODELO 2.pdf"),
             )
+
+            # ---- guardar/actualizar historial con payload completo ----
+            try:
+                upsert_historial_con_json(
+                    numero=numero_recibo,
+                    cliente=datos["cliente"],
+                    fecha=datos["fecha"],
+                    subtotal="",
+                    total=datos["total"],
+                    estado="",
+                    datos=datos,
+                )
+            except Exception:
+                pass
 
             # ---- persistir cliente (best-effort) ----
             try:
