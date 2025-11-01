@@ -1,20 +1,25 @@
 # config.py
 import os, sys
 from pathlib import Path
+import platform
 
 # Raíz compartida en el servidor (podés sobreescribir con RECIBOS_ROOT)
 def _pick_root():
-    # 1) si definís RECIBOS_ROOT, se usa eso
+    # 1) si definís RECIBOS_ROOT, se usa eso (aplica también en Docker)
     env = os.getenv("RECIBOS_ROOT")
     if env:
         return Path(env)
 
-    # 2) si existe la M:, usarla; si no, caer a C:\RecibosLocal
-    m = Path(r"M:\Recibos")
-    m_drive = Path(m.drive + "\\") if m.drive else None
-    if m_drive and m_drive.exists():
-        return m
-    return Path(r"C:\RecibosLocal")
+    # 2) Si estamos en Windows, usar M: si existe; si no, C:\RecibosLocal
+    if os.name == "nt":
+        m = Path(r"M:\Recibos")
+        m_drive = Path(m.drive + "\\") if m.drive else None
+        if m_drive and m_drive.exists():
+            return m
+        return Path(r"C:\RecibosLocal")
+
+    # 3) En entornos no-Windows (p.ej. Docker Linux), usar /data por defecto
+    return Path(os.getenv("RECIBOS_ROOT_DEFAULT", "/data"))
 
 SERVER_ROOT = _pick_root()
 DATA_DIR    = SERVER_ROOT / "data"
@@ -56,6 +61,13 @@ QR_X_MM, QR_Y_MM = 18, 22
 BASE_QR_URL  = os.getenv("BASE_QR_URL", "http://192.168.1.80:5000/recibo")
 QR_SECRET_KEY = os.getenv("QR_SECRET_KEY", "solo-para-pruebas-locales-cambiar")
 FLASK_DEBUG   = os.getenv("FLASK_DEBUG", "1") == "1"
+
+# Validador (host/puerto parametrizables; útil para Docker)
+VALIDATOR_HOST = os.getenv("VALIDATOR_HOST", "127.0.0.1")
+try:
+    VALIDATOR_PORT = int(os.getenv("VALIDATOR_PORT", "5000"))
+except Exception:
+    VALIDATOR_PORT = 5000
 
 # Tabla forma de pago
 FP_MAX_ROWS = 6

@@ -1,9 +1,20 @@
 # app.py
+import os
+import logging
 from flask import Flask, request, render_template, abort
-from config import QR_SECRET_KEY
+from config import QR_SECRET_KEY, VALIDATOR_HOST, VALIDATOR_PORT, FLASK_DEBUG
 from utils.qr_utils import verify_qr_params
 
 app = Flask(__name__, template_folder="Templates")
+
+# Logging básico a consola (útil en Docker)
+if not logging.getLogger().handlers:
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
+logger = logging.getLogger("validator")
+
+# Advertir si la clave es el valor por defecto (no romper, pero avisar)
+if QR_SECRET_KEY == "solo-para-pruebas-locales-cambiar":
+    logger.warning("QR_SECRET_KEY usa el valor por defecto. Definí una clave segura en producción.")
 
 @app.route("/health")
 def health():
@@ -31,5 +42,5 @@ def not_found(e):
     return "<h1>No encontrado</h1>", 404
 
 if __name__ == "__main__":
-    # Para que funcione desde otros equipos de la LAN:
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # Host/puerto configurables por env (útil para Docker/CI)
+    app.run(host=VALIDATOR_HOST, port=VALIDATOR_PORT, debug=FLASK_DEBUG)
