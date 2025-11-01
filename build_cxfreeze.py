@@ -24,19 +24,17 @@ if (ROOT / "MODELO 2.pdf").exists():
     include_files.append(("MODELO 2.pdf", "templates/MODELO 2.pdf"))
 
 build_exe_options = {
-    # incluir ecosistema Flask explícitamente
     "packages": [
-        "flask", "jinja2", "werkzeug", "itsdangerous", "click", "markupsafe",
-        # si usás tkinter además:
+        "flask","jinja2","werkzeug","itsdangerous","click","markupsafe",
         "tkinter",
-        # si usás OCR:
-        "reportlab", "openpyxl", "PyPDF2", "fitz", "pytesseract", "pdf2image",
-        "qrcode", "dotenv",
+        "reportlab","openpyxl","PyPDF2","fitz","pytesseract","pdf2image",
+        "qrcode","dotenv",
+        "num2words",            
     ],
     "include_files": include_files,
-    # Incluir runtime de VC++ por si falta en el server
     "include_msvcr": True,
 }
+
 
 # Sin consola (cambiá a "Console" si querés ver prints)
 base = "Win32GUI"

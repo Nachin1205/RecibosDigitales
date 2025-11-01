@@ -1,51 +1,45 @@
-# RecibosDigitales.spec — generado automáticamente
-from PyInstaller.utils.hooks import collect_submodules
+# -*- mode: python ; coding: utf-8 -*-
 
-hidden = []
-hidden += collect_submodules('openpyxl')
-hidden += collect_submodules('reportlab')
-hidden += collect_submodules('PyPDF2')
-hidden += collect_submodules('fitz')
-hidden += collect_submodules('pytesseract')
-hidden += collect_submodules('pdf2image')
-
-datas = [
-
-]
-
-block_cipher = None
 
 a = Analysis(
-    ['RecibosDigitales/main.py'],
+    ['main.py'],
     pathex=[],
     binaries=[],
-    datas=datas,
-    hiddenimports=hidden,
+    datas=[('assets', 'assets')],
+    hiddenimports=[],
     hookspath=[],
+    hooksconfig={},
     runtime_hooks=[],
     excludes=[],
-    noarchive=False
+    noarchive=False,
+    optimize=0,
 )
-
-pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+pyz = PYZ(a.pure)
 
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.zipfiles,
-    a.datas,
+    [],
+    exclude_binaries=True,
     name='RecibosDigitales',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
     console=False,
-    icon='assets/tucumind.ico'
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+    icon=['assets\\tucumind.ico'],
 )
-
 coll = COLLECT(
-    exe, a.binaries, a.zipfiles, a.datas,
-    strip=False, upx=True, upx_exclude=[],
-    name='RecibosDigitales'
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    name='RecibosDigitales',
 )

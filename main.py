@@ -2,6 +2,12 @@
 import sys
 import threading
 import logging, logging.handlers, socket, getpass
+import os, sys
+if getattr(sys, "frozen", False):
+    os.chdir(os.path.dirname(sys.executable))
+else:
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 import tkinter as tk
 from tkinter import ttk, messagebox  # si no usás messagebox, podés quitarlo
 from config import SALIDA_DIR, CONTADOR_PATH

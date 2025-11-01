@@ -29,12 +29,19 @@ SALIDA_DIR = RECIBOS_DIR
 CONTADOR_PATH = DB_DIR / "contador_recibos.json"
 
 # Assets (junto al .exe / código)
-def _app_dir():
-    if getattr(sys, "frozen", False):
+def app_dir() -> Path:
+    # PyInstaller one-file (extrae a carpeta temporal)
+    if hasattr(sys, "_MEIPASS"):
         return Path(sys._MEIPASS)
+
+    # Ejecutables "congelados": cx_Freeze (y PyInstaller one-dir)
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).parent
+
+    # Ejecución normal (desde el código fuente)
     return Path(__file__).resolve().parent
 
-APP_DIR = _app_dir()
+APP_DIR = app_dir()
 ASSETS_DIR = APP_DIR / "assets"
 
 # Firma / logo
