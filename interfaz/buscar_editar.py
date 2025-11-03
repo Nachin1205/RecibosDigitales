@@ -123,6 +123,69 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
             except Exception:
                 datos = {}
 
+        # Fallback: si no hay JSON en el Excel, intentar leer el PDF
+        # original para precargar campos basicos.
+        if not datos:
+            try:
+                from PyPDF2 import PdfReader
+                base = Path(SALIDA_DIR)
+                candidatos = sorted(base.glob(f"Recibo_{numero}__*.pdf"))
+                if candidatos:
+                    reader = PdfReader(str(candidatos[0]))
+                    full_txt = "\n".join((p.extract_text() or "") for p in reader.pages)
+
+                    def _find(pat, flags=0, default=""):
+                        m = re.search(pat, full_txt, flags)
+                        return m.group(1).strip() if m else default
+
+                    def _to_float(s: str) -> float:
+                        try:
+                            s = str(s).strip()
+                            if not s:
+                                return 0.0
+                            if s.isdigit():
+                                return float(s)
+                            if "," in s and "." not in s:
+                                s = s.replace(".", "").replace(",", ".")
+                            elif "," in s and "." in s:
+                                if s.rfind(",") > s.rfind("."):
+                                    s = s.replace(".", "").replace(",", ".")
+                                else:
+                                    s = s.replace(",", "")
+                            else:
+                                s = s.replace(",", "")
+                            return float(s)
+                        except Exception:
+                            return 0.0
+
+                    fecha     = _find(r"Fecha:\s*(\d{2}/\d{2}/\d{4})")
+                    cliente   = _find(r"Cliente:\s*(.+)")
+                    domicilio = _find(r"Domicilio:\s*(.+)")
+                    localidad = _find(r"Localidad:\s*(.+)")
+                    cuit      = _find(r"CUIT:\s*([\d\-\.\s]+)")
+                    iva       = _find(r"Condici.?n\s+IVA:\s*(.+)")
+                    total_s   = _find(r"Total:\s*\$?\s*([0-9\.,]+)")
+                    total_v   = _to_float(total_s)
+
+                    m = re.search(r"En concepto de:\s*(.*?)\s*Retenciones", full_txt, re.DOTALL)
+                    concepto = m.group(1).strip() if m else ""
+
+                    datos = {
+                        "numero_recibo": numero,
+                        "fecha": fecha or fecha_row,
+                        "cliente": cliente or cliente_row,
+                        "domicilio": domicilio,
+                        "localidad": localidad,
+                        "cuit": cuit,
+                        "iva": iva,
+                        "concepto": concepto,
+                        "retenciones": {"Ganancias": 0.0, "SUSS": 0.0, "TEM": 0.0, "IIBB": 0.0},
+                        "forma_pago": [],
+                        "total": total_v or (total_row or "0"),
+                    }
+            except Exception:
+                pass
+
         # Defaults si faltan
         datos.setdefault("numero_recibo", numero)
         datos.setdefault("fecha", fecha_row)
@@ -394,4 +457,3 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
         ttk.Button(btns, text="Cancelar", command=win.destroy).grid(row=0, column=1, padx=6)
 
     ttk.Button(frame, text="Editar seleccionado", command=editar).grid(row=2, column=0, columnspan=4, pady=8)
-

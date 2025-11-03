@@ -33,6 +33,14 @@ SALIDA_DIR = RECIBOS_DIR
 # Contador centralizado
 CONTADOR_PATH = DB_DIR / "contador_recibos.json"
 
+# Historial de recibos (Excel) centralizado junto a la DB para que
+# sea estable tanto en .py como en ejecutable empaquetado. Los
+# módulos que lo usan hacen `from config import HISTORIAL_XLSX`.
+# Para máxima compatibilidad con tu flujo actual, guardamos el Excel
+# junto al código (carpeta 'historial' dentro de la app), de modo que
+# sea el mismo archivo que ya venías usando.
+HISTORIAL_XLSX = Path(__file__).resolve().parent / "historial" / "recibos.xlsx"
+
 # Assets (junto al .exe / código)
 def app_dir() -> Path:
     # PyInstaller one-file (extrae a carpeta temporal)

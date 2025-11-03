@@ -363,8 +363,20 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
                     estado="",
                     datos=datos,
                 )
-            except Exception:
-                pass
+            except Exception as e:
+                # Informar explícitamente; suele fallar si falta openpyxl o si el Excel está abierto/bloqueado
+                try:
+                    from config import HISTORIAL_XLSX
+                    ubic = str(HISTORIAL_XLSX)
+                except Exception:
+                    ubic = "historial/recibos.xlsx"
+                messagebox.showwarning(
+                    "Historial",
+                    "No se pudo actualizar el historial en Excel.\n"
+                    f"Archivo: {ubic}\n\n"
+                    "Cerrá el archivo si está abierto y verificá que 'openpyxl' esté instalado.\n\n"
+                    f"Detalle: {e}"
+                )
 
             # ---- persistir cliente (best-effort) ----
             try:
