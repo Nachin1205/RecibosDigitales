@@ -70,7 +70,7 @@ def main():
     root = tk.Tk()
     root.iconbitmap(default=str(ASSETS_DIR / "tucumind.ico"))
     root.title("Recibos Digitales - MODELO 2")
-    root.geometry("820x720")
+    root.geometry("820x820")
 
     tabs = ttk.Notebook(root)
     tabs.pack(expand=True, fill="both")

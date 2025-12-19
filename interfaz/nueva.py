@@ -1,11 +1,18 @@
 # interfaz/nueva.py
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 from utils.qr_utils import build_qr_data
 from config import BASE_QR_URL, QR_SECRET_KEY, SALIDA_DIR, ASSETS_DIR
 import re
-from utils.clientes import init_db, buscar_por_nombre_o_cuit, upsert_cliente
+from utils.clientes import (
+    init_db,
+    upsert_cliente,
+    listar_clientes,
+    importar_clientes_desde_excel,
+    buscar_por_nombre_o_cuit,
+)
+from utils import recibos_db
 from utils.helpers import validar_fecha_no_futura
 from utils.recibo_utils import posible_duplicado
 from utils.recibo_utils import upsert_historial_con_json
@@ -22,8 +29,16 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
     frame = ttk.Frame(tabs)
     tabs.add(frame, text="🧾 Nuevo Recibo")
 
-    # Base de clientes (para autocompletado)
+    # Base de clientes (para autocompletado) y DB de recibos
     init_db()
+    recibos_db.init_db()
+    clientes_cache = listar_clientes()
+    clientes_filtrados = list(clientes_cache)
+    cliente_busqueda_var = tk.StringVar()
+    cliente_listbox = None
+    btn_agregar_cliente = None
+    btn_importar_excel = None
+    cliente_busqueda_entry = None
 
     # ---- Entradas básicas ----
     campos = {}
@@ -39,8 +54,30 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
     ]
     for i, (label, key) in enumerate(filas):
         ttk.Label(frame, text=label).grid(row=i, column=0, sticky="e", padx=4, pady=2)
-        entry = ttk.Entry(frame, width=40)
-        entry.grid(row=i, column=1, sticky="w", padx=4, pady=2)
+        if key == "cliente":
+            cliente_container = ttk.Frame(frame)
+            cliente_container.grid(row=i, column=1, sticky="we", padx=4, pady=2)
+            cliente_container.columnconfigure(0, weight=1)
+
+            entry = ttk.Entry(cliente_container, width=40, state="readonly")
+            entry.grid(row=0, column=0, columnspan=2, sticky="we")
+
+            selector_frame = ttk.Frame(cliente_container)
+            selector_frame.grid(row=1, column=0, columnspan=2, sticky="we", pady=(4, 0))
+            selector_frame.columnconfigure(1, weight=1)
+            ttk.Label(selector_frame, text="Buscar").grid(row=0, column=0, padx=(0, 4))
+            cliente_busqueda_entry = ttk.Entry(selector_frame, width=26, textvariable=cliente_busqueda_var)
+            cliente_busqueda_entry.grid(row=0, column=1, sticky="we")
+            btn_agregar_cliente = ttk.Button(selector_frame, text="Agregar cliente...", command=lambda: None)
+            btn_agregar_cliente.grid(row=0, column=2, padx=(6, 0))
+            btn_importar_excel = ttk.Button(selector_frame, text="Importar Excel...", command=lambda: None)
+            btn_importar_excel.grid(row=0, column=3, padx=(6, 0))
+
+            cliente_listbox = tk.Listbox(cliente_container, height=5, width=40, exportselection=False)
+            cliente_listbox.grid(row=2, column=0, columnspan=2, sticky="we", pady=(4, 0))
+        else:
+            entry = ttk.Entry(frame, width=40)
+            entry.grid(row=i, column=1, sticky="w", padx=4, pady=2)
         campos[key] = entry
 
     # Número de recibo (preview)
@@ -118,7 +155,7 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
         except Exception:
             return 0.0
 
-    # --- NUEVO: recalcula retenciones y el TOTAL NETO (solo UI) ---
+    # --- Recalcula retenciones y el TOTAL NETO (solo UI) ---
     def recalcular_totales(*_):
         # Tomamos el "Total ($)" de arriba como BRUTO.
         # Si aún no cambiaste el nombre del campo a 'total', usa 'subtotal' automáticamente.
@@ -167,7 +204,7 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
     fp_fecha = ttk.Entry(fp_frame, width=12); fp_fecha.grid(row=1, column=3, padx=5)
     fp_importe = ttk.Entry(fp_frame, width=12); fp_importe.grid(row=1, column=4, padx=5)
 
-    # --- NUEVO: grilla de pagos (hasta 6 visibles en PDF) ---
+    # --- Grilla de pagos (hasta 6 visibles en PDF) ---
     pagos_tree = ttk.Treeview(fp_frame, columns=("tipo","numero","banco","fecha","importe"),
                               show="headings", height=6)
     for col, txt, w in [
@@ -222,41 +259,202 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
             t, n, b, f, im = pagos_tree.item(iid, "values")
             pagos.append({
                 "tipo": t, "numero": n, "banco": b, "fecha": f,
-                "importe": _parse_monetario(im),
+                "importe": _parse_monetario(im),                
             })
         return pagos
 
-    # ---- Autocompletado (ya con los Entry creados) ----
-    ent_cliente    = campos["cliente"]
-    ent_cuit       = campos["cuit"]
-    ent_domicilio  = campos["domicilio"]
-    ent_localidad  = campos["localidad"]
-    ent_iva        = campos["iva"]
+    # ---- Gestión de clientes con filtro ----
+    def _set_cliente_entry(nombre_text: str):
+        entry_cliente = campos["cliente"]
+        entry_cliente.config(state="normal")
+        entry_cliente.delete(0, tk.END)
+        if nombre_text:
+            entry_cliente.insert(0, nombre_text)
+        entry_cliente.config(state="readonly")
 
-    def _try_autocomplete(_event=None):
-        q = ent_cliente.get().strip() or ent_cuit.get().strip()
-        if not q:
+    def _rellenar_campos_cliente(data, actualizar_busqueda=False):
+        if not data:
+            return
+        nombre, cuit, dom, loc, iva = data
+        _set_cliente_entry(nombre or "")
+        if actualizar_busqueda:
+            cliente_busqueda_var.set(nombre or "")
+        for widget, value in (
+            (campos["cuit"], cuit),
+            (campos["domicilio"], dom),
+            (campos["localidad"], loc),
+            (campos["iva"], iva),
+        ):
+            widget.delete(0, tk.END)
+            if value:
+                widget.insert(0, value)
+
+    def _actualizar_listbox(*_):
+        nonlocal clientes_filtrados
+        filtro = (cliente_busqueda_var.get() or "").strip().lower()
+        filtrados = []
+        for data in clientes_cache:
+            nombre = (data[0] or "").lower()
+            if not filtro or filtro in nombre:
+                filtrados.append(data)
+        clientes_filtrados = filtrados
+        if cliente_listbox is None:
+            return
+        cliente_listbox.delete(0, tk.END)
+        for nombre, *_ in clientes_filtrados:
+            cliente_listbox.insert(tk.END, nombre)
+
+    def _on_listbox_select(_event=None):
+        if cliente_listbox is None:
+            return
+        sel = cliente_listbox.curselection()
+        if not sel:
+            return
+        idx = sel[0]
+        if idx >= len(clientes_filtrados):
+            return
+        _rellenar_campos_cliente(clientes_filtrados[idx])
+
+    def _refrescar_clientes_cache(nombre_preseleccionado=""):
+        nonlocal clientes_cache, clientes_filtrados
+        try:
+            clientes_cache = listar_clientes()
+        except Exception:
+            clientes_cache = []
+        clientes_filtrados = list(clientes_cache)
+        _actualizar_listbox()
+        if nombre_preseleccionado:
+            for data in clientes_cache:
+                if (data[0] or "").lower() == nombre_preseleccionado.lower():
+                    _rellenar_campos_cliente(data, actualizar_busqueda=True)
+                    break
+
+    def importar_excel_clientes():
+        archivo = filedialog.askopenfilename(
+            title="Importar clientes desde Excel",
+            filetypes=[("Archivos de Excel", "*.xlsx *.xls"), ("Todos los archivos", "*.*")],
+        )
+        if not archivo:
             return
         try:
-            r = buscar_por_nombre_o_cuit(q)  # (nombre, cuit, dom, loc, iva) o None
-        except Exception:
+            resumen = importar_clientes_desde_excel(archivo)
+        except ModuleNotFoundError:
+            messagebox.showerror(
+                "Clientes",
+                "Necesitás tener 'openpyxl' instalado para importar desde Excel.",
+            )
             return
-        if not r:
+        except Exception as exc:
+            messagebox.showerror("Clientes", f"No se pudo importar: {exc}")
             return
-        nombre, cuit, dom, loc, iva = r
-        if nombre and not ent_cliente.get().strip():
-            ent_cliente.insert(0, nombre)
-        if cuit and not ent_cuit.get().strip():
-            ent_cuit.insert(0, cuit)
-        if dom and not ent_domicilio.get().strip():
-            ent_domicilio.insert(0, dom)
-        if loc and not ent_localidad.get().strip():
-            ent_localidad.insert(0, loc)
-        if iva and not ent_iva.get().strip():
-            ent_iva.insert(0, iva)
 
-    ent_cliente.bind("<FocusOut>", _try_autocomplete)
-    ent_cuit.bind(   "<FocusOut>", _try_autocomplete)
+        _refrescar_clientes_cache()
+        msg = (
+            "Importación completada.\n"
+            f"Nuevos: {resumen.get('insertados', 0)}\n"
+            f"Actualizados: {resumen.get('actualizados', 0)}\n"
+            f"Omitidos: {resumen.get('omitidos', 0)}"
+        )
+        messagebox.showinfo("Clientes", msg)
+
+    def abrir_modal_cliente():
+        pre_data = None
+        if cliente_listbox is not None:
+            sel = cliente_listbox.curselection()
+            if sel and sel[0] < len(clientes_filtrados):
+                pre_data = clientes_filtrados[sel[0]]
+        if not pre_data:
+            # Intentar por nombre actual en entry
+            nombre_actual = campos["cliente"].get().strip()
+            if nombre_actual:
+                pre_data = buscar_por_nombre_o_cuit(nombre_actual)
+
+        modal = tk.Toplevel(frame)
+        modal.title("Agregar / editar cliente")
+        modal.transient(frame.winfo_toplevel())
+        modal.grab_set()
+        modal.resizable(False, False)
+
+        campos_modal = {}
+        info_var = tk.StringVar()
+        modal_fields = [
+            ("Nombre", "nombre"),
+            ("CUIT", "cuit"),
+            ("Domicilio", "domicilio"),
+            ("Localidad", "localidad"),
+            ("IVA", "iva"),
+        ]
+        for i, (lbl, key) in enumerate(modal_fields):
+            ttk.Label(modal, text=lbl).grid(row=i, column=0, sticky="e", padx=6, pady=4)
+            e = ttk.Entry(modal, width=40)
+            e.grid(row=i, column=1, sticky="w", padx=6, pady=4)
+            campos_modal[key] = e
+
+        info_lbl = ttk.Label(modal, textvariable=info_var, foreground="gray")
+        info_lbl.grid(row=len(modal_fields), column=0, columnspan=2, padx=6, pady=(0, 6), sticky="w")
+
+        if pre_data:
+            nombre, cuit, dom, loc, iva = pre_data
+            campos_modal["nombre"].insert(0, nombre or "")
+            campos_modal["cuit"].insert(0, cuit or "")
+            campos_modal["domicilio"].insert(0, dom or "")
+            campos_modal["localidad"].insert(0, loc or "")
+            campos_modal["iva"].insert(0, iva or "")
+            info_var.set(f"Editás a {nombre}. Guardando se reemplazarán sus datos.")
+        else:
+            info_var.set("Nuevo cliente. Quedará disponible para seleccionar al guardar.")
+
+        def _guardar_modal():
+            nombre = campos_modal["nombre"].get().strip()
+            if not nombre:
+                messagebox.showerror("Clientes", "El nombre es obligatorio.")
+                return
+
+            nombre_actual = (pre_data[0] if pre_data else "") or ""
+            existente = None
+            try:
+                existente = buscar_por_nombre_o_cuit(nombre)
+            except Exception:
+                existente = None
+            if existente and nombre.strip().lower() != nombre_actual.strip().lower():
+                messagebox.showerror(
+                    "Clientes",
+                    "Ya existe otro cliente con ese nombre. Seleccionalo para editarlo o usá un nombre distinto.",
+                )
+                return
+
+            try:
+                upsert_cliente(
+                    nombre,
+                    campos_modal["cuit"].get().strip(),
+                    campos_modal["domicilio"].get().strip(),
+                    campos_modal["localidad"].get().strip(),
+                    campos_modal["iva"].get().strip(),
+                )
+            except Exception as exc:
+                messagebox.showerror("Clientes", f"No se pudo guardar: {exc}")
+                return
+
+            messagebox.showinfo("Clientes", "Cliente guardado correctamente.")
+            modal.destroy()
+            _refrescar_clientes_cache(nombre)
+            if cliente_busqueda_entry is not None:
+                cliente_busqueda_entry.focus_set()
+
+        btns = ttk.Frame(modal)
+        btns.grid(row=len(modal_fields)+1, column=0, columnspan=2, pady=(4, 0))
+        ttk.Button(btns, text="Guardar", command=_guardar_modal).grid(row=0, column=0, padx=4)
+        ttk.Button(btns, text="Cancelar", command=modal.destroy).grid(row=0, column=1, padx=4)
+
+    if cliente_listbox is not None:
+        cliente_listbox.bind("<<ListboxSelect>>", _on_listbox_select)
+        cliente_listbox.bind("<Double-Button-1>", _on_listbox_select)
+    cliente_busqueda_var.trace_add("write", lambda *_: _actualizar_listbox())
+    _actualizar_listbox()
+    if btn_agregar_cliente is not None:
+        btn_agregar_cliente.config(command=abrir_modal_cliente)
+    if btn_importar_excel is not None:
+        btn_importar_excel.config(command=importar_excel_clientes)
 
     # ---- Generar ----
     def generar():
@@ -378,11 +576,15 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
                     f"Detalle: {e}"
                 )
 
-            # ---- persistir cliente (best-effort) ----
+            # ---- persistir recibo en la base SQLite ----
             try:
-                upsert_cliente(datos["cliente"], datos["cuit"], datos["domicilio"], datos["localidad"], datos["iva"])
-            except Exception:
-                pass
+                recibos_db.guardar_recibo(datos, neto)
+            except Exception as e:
+                messagebox.showwarning(
+                    "Recibos",
+                    "El recibo se generó pero no se pudo guardar en la base.\n"
+                    f"Detalle: {e}"
+                )
 
             # ---- refrescar preview del siguiente ----
             try:

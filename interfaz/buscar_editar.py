@@ -13,6 +13,7 @@ from config import SALIDA_DIR, ASSETS_DIR, BASE_QR_URL, QR_SECRET_KEY
 from utils.qr_utils import build_qr_data
 from utils.pdf_generator import generar_pdf
 from utils.recibo_utils import upsert_historial_con_json
+from utils import recibos_db
 
 # Ruta del historial (opcional desde config)
 try:
@@ -24,6 +25,7 @@ except Exception:
 def crear_pestana_buscar(tabs: ttk.Notebook):
     frame = ttk.Frame(tabs)
     tabs.add(frame, text="Buscar / Editar")
+    recibos_db.init_db()
 
     ttk.Label(frame, text="Buscar por:").grid(row=0, column=0, sticky="w", pady=5)
     criterio = ttk.Combobox(frame, values=["Número", "Cliente", "Fecha"], state="readonly")
@@ -33,15 +35,52 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
     entrada.grid(row=0, column=2)
     ttk.Button(frame, text="Buscar", command=lambda: _buscar()).grid(row=0, column=3, padx=6)
 
+    filtros_fecha = ttk.Frame(frame)
+    filtros_fecha.grid(row=1, column=0, columnspan=4, sticky="w", pady=(0, 4))
+    ttk.Label(filtros_fecha, text="Desde (DD/MM/AAAA):").grid(row=0, column=0, padx=(0, 4))
+    entrada_desde = ttk.Entry(filtros_fecha, width=12)
+    entrada_desde.grid(row=0, column=1, padx=(0, 10))
+    ttk.Label(filtros_fecha, text="Hasta (DD/MM/AAAA):").grid(row=0, column=2, padx=(0, 4))
+    entrada_hasta = ttk.Entry(filtros_fecha, width=12)
+    entrada_hasta.grid(row=0, column=3)
+
     resultados = tk.Listbox(frame, width=100, height=12)
-    resultados.grid(row=1, column=0, columnspan=4, pady=10, sticky="we")
+    resultados.grid(row=2, column=0, columnspan=4, pady=10, sticky="we")
 
     def _buscar():
         resultados.delete(0, tk.END)
 
         campo = criterio.get()
-        valor = (entrada.get() or "").strip().lower()
+        valor_original = (entrada.get() or "").strip()
+        valor = valor_original.lower()
         filas_por_num = {}
+
+        fecha_desde_val = (entrada_desde.get() or "").strip()
+        fecha_hasta_val = (entrada_hasta.get() or "").strip()
+        if campo == "Fecha" and valor_original:
+            fecha_desde_val = valor_original
+            fecha_hasta_val = valor_original
+
+        # 0) Consultar base de recibos
+        try:
+            filas_db = recibos_db.buscar_recibos(
+                numero=valor_original if campo == "Número" else None,
+                cliente=valor_original if campo == "Cliente" else None,
+                fecha_desde=fecha_desde_val or None,
+                fecha_hasta=fecha_hasta_val or None,
+                limite=500,
+            )
+            for fila in filas_db:
+                filas_por_num[fila["numero"]] = [
+                    fila["numero"],
+                    fila.get("cliente", ""),
+                    fila.get("fecha", ""),
+                    "",
+                    f"{float(fila.get('total_bruto') or 0.0):.2f}",
+                    "",
+                ]
+        except Exception:
+            pass
 
         # 1) Buscar por PDFs en SALIDA_DIR (similar a pestaña Anular)
         try:
@@ -105,9 +144,17 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
             messagebox.showerror("Error", "No se pudo interpretar la fila seleccionada.")
             return
 
-        # Intentar cargar JSON desde historial
+        # Intentar cargar JSON desde la base SQLite primero
         datos = {}
-        if openpyxl is not None and Path(HISTORIAL_PATH).exists():
+        try:
+            fila_db = recibos_db.buscar_recibos(numero=numero, limite=1)
+            if fila_db:
+                datos = fila_db[0].get("datos") or {}
+        except Exception:
+            datos = {}
+
+        # Si no se encontró en la base, intentar desde el historial
+        if not datos and openpyxl is not None and Path(HISTORIAL_PATH).exists():
             try:
                 libro = openpyxl.load_workbook(HISTORIAL_PATH)
                 hoja = libro.active
@@ -456,4 +503,4 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
         ttk.Button(btns, text="Guardar", command=guardar).grid(row=0, column=0, padx=6)
         ttk.Button(btns, text="Cancelar", command=win.destroy).grid(row=0, column=1, padx=6)
 
-    ttk.Button(frame, text="Editar seleccionado", command=editar).grid(row=2, column=0, columnspan=4, pady=8)
+    ttk.Button(frame, text="Editar seleccionado", command=editar).grid(row=3, column=0, columnspan=1, pady=8, sticky="w")
