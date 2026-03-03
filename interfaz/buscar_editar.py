@@ -22,10 +22,23 @@ except Exception:
     HISTORIAL_PATH = Path("historial/recibos.xlsx")
 
 
-def crear_pestana_buscar(tabs: ttk.Notebook):
+def _notify(notify, level: str, title: str, message: str):
+    if callable(notify):
+        notify(level, title, message)
+        return
+    if level == "error":
+        messagebox.showerror(title, message)
+    elif level == "warning":
+        messagebox.showwarning(title, message)
+    else:
+        messagebox.showinfo(title, message)
+
+
+def crear_pestana_buscar(tabs: ttk.Notebook, notify=None):
     frame = ttk.Frame(tabs)
     tabs.add(frame, text="Buscar / Editar")
     recibos_db.init_db()
+    empty_state_var = tk.StringVar(value="Usá la búsqueda para listar recibos.")
 
     ttk.Label(frame, text="Buscar por:").grid(row=0, column=0, sticky="w", pady=5)
     criterio = ttk.Combobox(frame, values=["Número", "Cliente", "Fecha"], state="readonly")
@@ -46,6 +59,7 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
 
     resultados = tk.Listbox(frame, width=100, height=12)
     resultados.grid(row=2, column=0, columnspan=4, pady=10, sticky="we")
+    ttk.Label(frame, textvariable=empty_state_var, style="Muted.TLabel").grid(row=3, column=0, columnspan=4, sticky="w")
 
     def _buscar():
         resultados.delete(0, tk.END)
@@ -124,15 +138,16 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
                 pass
 
         if not filas_por_num:
-            messagebox.showinfo("Sin resultados", "No se encontraron recibos que coincidan.")
+            empty_state_var.set("No hay resultados para esa búsqueda.")
             return
+        empty_state_var.set(f"Se encontraron {len(filas_por_num)} resultado(s).")
         for fila6 in filas_por_num.values():
             resultados.insert(tk.END, " | ".join(str(c) for c in fila6))
 
     def editar():
         seleccion = resultados.get(tk.ACTIVE)
         if not seleccion:
-            messagebox.showinfo("Seleccionar", "Seleccioná un recibo para editar.")
+            _notify(notify, "warning", "Seleccionar", "Seleccioná un recibo para editar.")
             return
 
         try:
@@ -141,7 +156,7 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
                 partes.append("")
             numero, cliente_row, fecha_row, subtotal_row, total_row, estado_row = partes[:6]
         except Exception:
-            messagebox.showerror("Error", "No se pudo interpretar la fila seleccionada.")
+            _notify(notify, "error", "Error", "No se pudo interpretar la fila seleccionada.")
             return
 
         # Intentar cargar JSON desde la base SQLite primero
@@ -370,10 +385,10 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
             f = fp_fecha.get().strip()
             im = _parse_monetario_local(fp_importe.get().strip())
             if not t:
-                messagebox.showerror("Pago", "Seleccioná un tipo.")
+                _notify(notify, "error", "Pago", "Seleccioná un tipo.")
                 return
             if im <= 0:
-                messagebox.showerror("Pago", "Importe inválido.")
+                _notify(notify, "error", "Pago", "Importe inválido.")
                 return
             pagos_tree.insert("", "end", values=(t, n, b, f, f"{im:.2f}"))
 
@@ -416,10 +431,10 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
                 est = ent_estado.get().strip()
 
                 if not fec:
-                    messagebox.showerror("Error", "La fecha es obligatoria.")
+                    _notify(notify, "error", "Error", "La fecha es obligatoria.")
                     return
                 if not cli:
-                    messagebox.showerror("Error", "El cliente es obligatorio.")
+                    _notify(notify, "error", "Error", "El cliente es obligatorio.")
                     return
 
                 ret = {k: _parse_monetario_local(ret_entries[k].get()) for k in ret_labels}
@@ -484,7 +499,7 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
                     )
                 except Exception:
                     # Si falta openpyxl o hubo error, solo avisar, el PDF ya está regenerado
-                    messagebox.showwarning("Historial", "No se pudo actualizar el historial (openpyxl no instalado o archivo bloqueado).")
+                    _notify(notify, "warning", "Historial", "No se pudo actualizar el historial (openpyxl no instalado o archivo bloqueado).")
 
                 # Refrescar lista
                 nueva_fila = " | ".join([num, cli, fec, "", f"{bruto}", est])
@@ -493,14 +508,29 @@ def crear_pestana_buscar(tabs: ttk.Notebook):
                     resultados.delete(sel_idx[0])
                     resultados.insert(sel_idx[0], nueva_fila)
 
-                messagebox.showinfo("Listo", "Recibo actualizado y PDF regenerado.")
+                _notify(notify, "success", "Listo", "Recibo actualizado y PDF regenerado.")
                 win.destroy()
             except Exception as e:
-                messagebox.showerror("Error", str(e))
+                _notify(notify, "error", "Error", str(e))
 
         btns = ttk.Frame(win)
         btns.grid(row=base_row + 3, column=0, columnspan=2, pady=8)
         ttk.Button(btns, text="Guardar", command=guardar).grid(row=0, column=0, padx=6)
         ttk.Button(btns, text="Cancelar", command=win.destroy).grid(row=0, column=1, padx=6)
 
-    ttk.Button(frame, text="Editar seleccionado", command=editar).grid(row=3, column=0, columnspan=1, pady=8, sticky="w")
+    def busqueda_global(texto: str):
+        txt = (texto or "").strip()
+        if not txt:
+            return
+        if re.match(r"^\d{2}/\d{2}/\d{4}$", txt):
+            criterio.set("Fecha")
+        elif re.match(r"^\d{4}-\d{8}$", txt):
+            criterio.set("Número")
+        else:
+            criterio.set("Cliente")
+        entrada.delete(0, tk.END)
+        entrada.insert(0, txt)
+        _buscar()
+
+    ttk.Button(frame, text="Editar seleccionado", command=editar).grid(row=4, column=0, columnspan=1, pady=8, sticky="w")
+    return {"frame": frame, "buscar_global": busqueda_global, "buscar_local": _buscar}

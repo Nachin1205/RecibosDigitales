@@ -1,5 +1,3 @@
-from num2words import num2words
-# utils/helpers.py  (agregar)
 from datetime import datetime
 
 def validar_fecha_no_futura(fecha_str: str) -> bool:
@@ -13,7 +11,11 @@ def numero_a_letras(monto):
     entero = int(monto)
     centavos = int(round((monto - entero) * 100))
 
-    texto = num2words(entero, lang='es').capitalize()
+    try:
+        from num2words import num2words
+        texto = num2words(entero, lang="es").capitalize()
+    except Exception:
+        texto = f"{entero:,}".replace(",", ".")
 
     if centavos > 0:
         texto += f" con {centavos:02}/100"

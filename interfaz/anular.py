@@ -14,35 +14,50 @@ from utils.recibo_utils import marcar_anulado
 
 PATRON_NUM_COMPLETO = re.compile(r"^\d{4}-\d{8}$")  # 0001-00000001
 
-def crear_pestana_anular(tabs):
+def _notify(notify, level: str, title: str, message: str):
+    if callable(notify):
+        notify(level, title, message)
+        return
+    if level == "error":
+        messagebox.showerror(title, message)
+    elif level == "warning":
+        messagebox.showwarning(title, message)
+    else:
+        messagebox.showinfo(title, message)
+
+
+def crear_pestana_anular(tabs, notify=None):
     frame = ttk.Frame(tabs)
     tabs.add(frame, text="🗑️ Anular")
+    estado_var = tk.StringVar(value="Buscá por número o nombre para listar PDFs.")
 
     ttk.Label(frame, text="Buscar (número o nombre parcial)").grid(row=0, column=0, sticky="e", padx=4, pady=4)
     ent_buscar = ttk.Entry(frame, width=32)
     ent_buscar.grid(row=0, column=1, sticky="w", padx=4, pady=4)
-    ttk.Button(frame, text="Buscar", command=lambda: _buscar(ent_buscar.get(), lista)).grid(row=0, column=2, padx=6)
+    ttk.Button(frame, text="Buscar", command=lambda: _buscar(ent_buscar.get(), lista, estado_var, notify)).grid(row=0, column=2, padx=6)
 
     ttk.Label(frame, text="Coincidencias en /recibos").grid(row=1, column=0, columnspan=3, sticky="w", padx=4)
     lista = tk.Listbox(frame, width=90, height=10)
     lista.grid(row=2, column=0, columnspan=3, padx=4, pady=6, sticky="we")
+    ttk.Label(frame, textvariable=estado_var, style="Muted.TLabel").grid(row=3, column=0, columnspan=3, sticky="w", padx=4)
 
-    ttk.Button(frame, text="Anular seleccionado", command=lambda: _anular_seleccion(lista)).grid(row=3, column=0, columnspan=3, pady=10)
+    ttk.Button(frame, text="Anular seleccionado", command=lambda: _anular_seleccion(lista, notify)).grid(row=4, column=0, columnspan=3, pady=10)
 
-def _buscar(texto, lista):
+def _buscar(texto, lista, estado_var, notify=None):
     lista.delete(0, tk.END)
     q = (texto or "").strip().lower()
     pdfs = sorted(Path(SALIDA_DIR).glob("Recibo_*.pdf"))
     encontrados = [p for p in pdfs if q in p.name.lower()]
     if not encontrados:
-        messagebox.showinfo("Sin resultados", "No se encontraron PDFs que coincidan.")
+        estado_var.set("No hay resultados para esa búsqueda.")
         return
+    estado_var.set(f"Se encontraron {len(encontrados)} resultado(s).")
     for p in encontrados:
         lista.insert(tk.END, p.name)
 
-def _anular_seleccion(lista):
+def _anular_seleccion(lista, notify=None):
     if not lista.curselection():
-        messagebox.showerror("Atención", "Seleccioná un PDF de la lista.")
+        _notify(notify, "error", "Atención", "Seleccioná un PDF de la lista.")
         return
     nombre = lista.get(lista.curselection()[0])
     origen = Path(SALIDA_DIR) / nombre
@@ -57,7 +72,7 @@ def _anular_seleccion(lista):
     try:
         _crear_pdf_anulado(origen, destino)
     except Exception as e:
-        messagebox.showerror("Error al anular", str(e))
+        _notify(notify, "error", "Error al anular", str(e))
         return
 
     try:
@@ -71,7 +86,7 @@ def _anular_seleccion(lista):
         except Exception:
             pass
 
-    messagebox.showinfo("Listo", f"Se creó: {destino.name}")
+    _notify(notify, "success", "Listo", f"Se creó: {destino.name}")
 
 def reemplazar_por_anulado(nombre: str) -> str:
     # Recibo_0001-00000001__Cliente.pdf -> Recibo_0001-00000001__ANULADO.pdf

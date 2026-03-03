@@ -25,7 +25,19 @@ LOGO_PATH = None
 FIRMA_PATH = ASSETS_DIR / "firma.png"   # ✅ sirve en .py y en el .exe
 # No definimos CARPETA_SALIDA: los PDFs van a SALIDA_DIR (servidor)
 
-def crear_pestana_nueva(tabs: ttk.Notebook):
+def _notify(notify, level: str, title: str, message: str):
+    if callable(notify):
+        notify(level, title, message)
+        return
+    if level == "error":
+        messagebox.showerror(title, message)
+    elif level == "warning":
+        messagebox.showwarning(title, message)
+    else:
+        messagebox.showinfo(title, message)
+
+
+def crear_pestana_nueva(tabs: ttk.Notebook, notify=None):
     frame = ttk.Frame(tabs)
     tabs.add(frame, text="🧾 Nuevo Recibo")
 
@@ -231,10 +243,10 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
         im = _parse_monetario(fp_importe.get().strip())
 
         if not t:
-            messagebox.showerror("Pago", "Seleccioná un tipo.")
+            _notify(notify, "error", "Pago", "Seleccioná un tipo.")
             return
         if im <= 0:
-            messagebox.showerror("Pago", "Importe inválido.")
+            _notify(notify, "error", "Pago", "Importe inválido.")
             return
 
         pagos_tree.insert("", "end", values=(t, n, b, f, f"{im:.2f}"))
@@ -339,13 +351,10 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
         try:
             resumen = importar_clientes_desde_excel(archivo)
         except ModuleNotFoundError:
-            messagebox.showerror(
-                "Clientes",
-                "Necesitás tener 'openpyxl' instalado para importar desde Excel.",
-            )
+            _notify(notify, "error", "Clientes", "Necesitás tener 'openpyxl' instalado para importar desde Excel.")
             return
         except Exception as exc:
-            messagebox.showerror("Clientes", f"No se pudo importar: {exc}")
+            _notify(notify, "error", "Clientes", f"No se pudo importar: {exc}")
             return
 
         _refrescar_clientes_cache()
@@ -355,7 +364,7 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
             f"Actualizados: {resumen.get('actualizados', 0)}\n"
             f"Omitidos: {resumen.get('omitidos', 0)}"
         )
-        messagebox.showinfo("Clientes", msg)
+        _notify(notify, "success", "Clientes", msg)
 
     def abrir_modal_cliente():
         pre_data = None
@@ -407,7 +416,7 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
         def _guardar_modal():
             nombre = campos_modal["nombre"].get().strip()
             if not nombre:
-                messagebox.showerror("Clientes", "El nombre es obligatorio.")
+                _notify(notify, "error", "Clientes", "El nombre es obligatorio.")
                 return
 
             nombre_actual = (pre_data[0] if pre_data else "") or ""
@@ -417,7 +426,9 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
             except Exception:
                 existente = None
             if existente and nombre.strip().lower() != nombre_actual.strip().lower():
-                messagebox.showerror(
+                _notify(
+                    notify,
+                    "error",
                     "Clientes",
                     "Ya existe otro cliente con ese nombre. Seleccionalo para editarlo o usá un nombre distinto.",
                 )
@@ -432,10 +443,10 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
                     campos_modal["iva"].get().strip(),
                 )
             except Exception as exc:
-                messagebox.showerror("Clientes", f"No se pudo guardar: {exc}")
+                _notify(notify, "error", "Clientes", f"No se pudo guardar: {exc}")
                 return
 
-            messagebox.showinfo("Clientes", "Cliente guardado correctamente.")
+            _notify(notify, "success", "Clientes", "Cliente guardado correctamente.")
             modal.destroy()
             _refrescar_clientes_cache(nombre)
             if cliente_busqueda_entry is not None:
@@ -462,10 +473,10 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
 
         try:
             if not campos["fecha"].get().strip():
-                messagebox.showerror("Error", "La fecha es obligatoria.")
+                _notify(notify, "error", "Error", "La fecha es obligatoria.")
                 return
             if not campos["cliente"].get().strip():
-                messagebox.showerror("Error", "El cliente es obligatorio.")
+                _notify(notify, "error", "Error", "El cliente es obligatorio.")
                 return
 
             # ---- importes / retenciones ----
@@ -568,22 +579,26 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
                     ubic = str(HISTORIAL_XLSX)
                 except Exception:
                     ubic = "historial/recibos.xlsx"
-                messagebox.showwarning(
+                _notify(
+                    notify,
+                    "warning",
                     "Historial",
                     "No se pudo actualizar el historial en Excel.\n"
                     f"Archivo: {ubic}\n\n"
                     "Cerrá el archivo si está abierto y verificá que 'openpyxl' esté instalado.\n\n"
-                    f"Detalle: {e}"
+                    f"Detalle: {e}",
                 )
 
             # ---- persistir recibo en la base SQLite ----
             try:
                 recibos_db.guardar_recibo(datos, neto)
             except Exception as e:
-                messagebox.showwarning(
+                _notify(
+                    notify,
+                    "warning",
                     "Recibos",
                     "El recibo se generó pero no se pudo guardar en la base.\n"
-                    f"Detalle: {e}"
+                    f"Detalle: {e}",
                 )
 
             # ---- refrescar preview del siguiente ----
@@ -595,11 +610,11 @@ def crear_pestana_nueva(tabs: ttk.Notebook):
             except Exception:
                 pass
 
-            messagebox.showinfo("Éxito", f"Recibo generado correctamente:\n{ruta_pdf}")
+            _notify(notify, "success", "Éxito", f"Recibo generado correctamente:\n{ruta_pdf}")
 
         except Exception as e:
             # Si falló antes de asignar el número, no lo referencies
-            messagebox.showerror("Error", str(e))
+            _notify(notify, "error", "Error", str(e))
 
     ttk.Button(frame, text="Generar Recibo", command=generar)\
         .grid(row=13, column=0, columnspan=2, pady=10)
